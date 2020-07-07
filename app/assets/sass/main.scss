@@ -117,31 +117,22 @@ h1 {
 
 .app-email-footer{
   border-top: 1px solid $color_nhsuk-grey-4;
+  color: $nhsuk-secondary-text-color;
   padding-bottom: 32px;
   padding-top: 32px;
-}
-
-.app-email-footer__text {
-  color: $nhsuk-secondary-text-color;
-  margin-bottom: 32px;
 
   p {
     @include nhsuk-font($size: 14);
   }
 }
 
+.app-email-footer__text {
+  margin-bottom: 32px;
+}
+
 .app-email-footer__text--bottom {
   border-top: 1px solid $color_nhsuk-grey-4;
   padding-top: 32px;
-
-  p {
-    font-size: 12px;
-    line-height: 1.5;
-
-    @include mq($until: tablet) {
-      font-size: 10px;
-    }
-  }
 }
 
 .app-break-word {
