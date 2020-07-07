@@ -67,44 +67,32 @@ h1 {
 }
 
 .app-email-body {
-  background-color: $color_nhsuk-grey-5 !important;
-  max-width: 740px;
-  margin: 0 auto;
+  background-color: $color_nhsuk-white !important;
 
   #hc_extension_bkgnd {
-    background-color: $color_nhsuk-grey-5 !important;
+    background-color: $color_nhsuk-white !important;
   }
 }
 
 .app-email-container {
-  background-color: $color_nhsuk-grey-5 !important;
-  margin: 32px 16px;
+  padding: 16px;
+  max-width: 740px;
+  margin: 0 auto;
 }
 
 .app-email-container--body {
-  background-color: $color_nhsuk-white !important;
   margin: 0;
-  padding-bottom: 24px;
-  padding-left: 32px;
-  padding-right: 32px;
-  
-  @include mq($until: tablet) {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
+  padding-bottom: 16px;
+}
+
+.app-email-details {
+  background: $color_nhsuk-grey-4;
+  border-bottom: 1px solid $color_nhsuk-grey-4;
 }
 
 .app-email-header {
-  padding-bottom: 16px;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-top: 32px;
-
-  @include mq($until: tablet) {
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 24px;
-  }
+  padding-bottom: 8px;
+  padding-top: 16px;
 }
 
 .app-email-service {
@@ -128,6 +116,7 @@ h1 {
 }
 
 .app-email-footer{
+  border-top: 1px solid $color_nhsuk-grey-4;
   padding-bottom: 32px;
   padding-top: 32px;
 }
