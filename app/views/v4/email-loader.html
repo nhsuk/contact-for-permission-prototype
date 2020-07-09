@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% set backLink = "email" %}
+{% set version = "v4" %}
+{% set heading = "Loading" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-loader">
+        <span class="nhsuk-loader__spinner"></span>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    $(document).ready(function () {
+        // Handler for .ready() called.
+        window.setTimeout(function () {
+            location.href = "/v4/email-sent";
+        }, 2500);
+    });
+  </script>
+{% endblock %}
