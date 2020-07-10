@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% set version = "v4" %}
-{% set backLink = "dob" %}
+{% set backLink = "contact-preference" %}
 {% set heading = "What is your phone number?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
@@ -11,20 +11,14 @@
 
       <form action="/{{ version }}/your-sex" method="post" class="form">
 
-        {{ input({
-          "label": {
-            "text": heading,
-            "classes": "nhsuk-label--l",
-            "isPageHeading": true
-          },
-          "hint": {
-            "text": "If you don't have a mobile, we can contact you on a landline."
-          },
-          "id": "phone-number",
-          "name": "phone-number",
-          "classes": "nhsuk-input--width-20",
-          "value": data['phone-number']
-        }) }}
+        <div class="nhsuk-form-group">
+          <h1 class="nhsuk-label-wrapper">
+            <label class="nhsuk-label nhsuk-label--l" for="phone-number">
+              {{ heading }}
+            </label>
+          </h1>
+          <input class="nhsuk-input nhsuk-input--width-20" id="phone-number" name="phone-number" type="tel" autocomplete="tel" value="{{ data['phone-number'] }}">
+        </div>
 
         {{ details({
           "text": "Why we are asking this question",

@@ -34,6 +34,20 @@ router.post('/v4/postcode', function (req, res) {
 
 */
 
+// Contact preference - V4
+router.post('/v4/phone-number', function (req, res) {
+
+  var install = req.session.data['contact-preference']
+
+  if (install == "Email"){
+    res.redirect('/v4/your-sex')
+  }
+  else {
+    res.redirect('/v4/phone-number')
+  }
+
+})
+
 // Confirm email - v4
 router.post('/v4/what-we-ask-for', function (req, res) {
 
