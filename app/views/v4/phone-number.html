@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% set version = "v4" %}
+{% set backLink = "dob" %}
+{% set heading = "What is your phone number?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/your-sex" method="post" class="form">
+
+        {{ input({
+          "label": {
+            "text": heading,
+            "classes": "nhsuk-label--l",
+            "isPageHeading": true
+          },
+          "hint": {
+            "text": "If you don't have a mobile, we can contact you on a landline."
+          },
+          "id": "phone-number",
+          "name": "phone-number",
+          "classes": "nhsuk-input--width-20",
+          "value": data['phone-number']
+        }) }}
+
+        {{ details({
+          "text": "Why we are asking this question",
+          "HTML": "
+            <p>We're asking this so researchers have an alternative way of contacting you.</p>
+          "
+        }) }}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
