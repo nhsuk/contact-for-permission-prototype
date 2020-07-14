@@ -76,6 +76,20 @@ router.post('/v4/are-you-pregnant', function (req, res) {
 
 })
 
+// Contact with different people routing - V4
+router.post('/v4/health-social-care', function (req, res) {
+
+  var install = req.session.data['work']
+
+  if (install == "Yes, the work I'm doing at the moment means I have face to face contact with different people every day"){
+    res.redirect('/v4/health-social-care')
+  }
+  else {
+    res.redirect('/v4/tested')
+  }
+
+})
+
 // Tested routing - V4
 router.post('/v4/test-results', function (req, res) {
 

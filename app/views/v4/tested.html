@@ -1,7 +1,13 @@
 {% extends 'layout.html' %}
 
 {% set version = "v4" %}
-{% set backLink = "work" %}
+
+{% if (data['work'] == "Yes, the work I'm doing at the moment means I have face to face contact with different people every day") %}
+  {% set backLink = "health-social-care" %}
+{% else %}
+  {% set backLink = "work" %}
+{% endif %}
+
 {% set heading = "Have you had a coronavirus test?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
