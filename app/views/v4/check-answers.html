@@ -143,19 +143,27 @@
             </a>
           </dd>
         </div>
+
+        {% if (data['work'] == "Yes, the work I'm doing at the moment means I have face to face contact with different people every day") %}
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Work in health or social care
+            Contact with patients
           </dt>
           <dd class="nhsuk-summary-list__value">
             {{ data['health-social-care'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/health-social-care">
-              Change <span class="nhsuk-u-visually-hidden">Work in health or social care</span>
+              Change <span class="nhsuk-u-visually-hidden">Contact with patients</span>
             </a>
           </dd>
         </div>
+        {% else %}
+        
+      {% endif %}
+        
+        
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Had a coronavirus test
