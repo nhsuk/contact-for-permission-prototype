@@ -17,6 +17,10 @@
         <p>For more information about other types of health research see <a href="https://www.bepartofresearch.nihr.ac.uk/" target="_blank" rel="noopener noreferrer">Be Part of Research <span class="nhsuk-u-visually-hidden"> - Page opens in new window</span></a><span aria-hidden="true"> (opens in new window)</span>, which is provided by the National Institute for Health Research, the research partner of the NHS, public health and social care.</p>
       </div>
 
+      <p>NHS Digital would like to tell you about the progress and outcomes of the coronavirus vaccine studies. We also plan to develop this service, including to provide opportunities to take part in other types of health research.</p>
+
+      <h2 class="nhsuk-heading-m">Do you give permission to NHS Digital to contact you:</h2>
+
       <form action="/{{ version }}/check-answers" method="post" class="form">
       
         {{ radios({
@@ -24,7 +28,7 @@
           "name": "hear-from-nhsd",
           "fieldset": {
             "legend": {
-              "text": "NHS Digital would like to tell you about the progress and outcomes of the coronavirus vaccine studies. We also plan to develop this service, including to provide opportunities to take part in other types of health research. Do you agree to NHS Digital contacting you for these purposes?",
+              "text": "To tell you about the progress and outcomes of the coronavirus vaccine studies?",
               "classes": "nhsuk-u-margin-bottom-4"
             }
           },
@@ -40,6 +44,31 @@
               "text": "No",
               "name": "No",
               "checked": checked("hear-from-nhsd", "No")
+            }
+          ]
+        }) }}
+
+        {{ radios({
+          "idPrefix": "hear-from-nhsd-other",
+          "name": "hear-from-nhsd-other",
+          "fieldset": {
+            "legend": {
+              "text": "To tell you about developments to this service, including information about opportunities to take part in other types of health research.",
+              "classes": "nhsuk-u-margin-bottom-4"
+            }
+          },
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes",
+              "name": "Yes",
+              "checked": checked("hear-from-nhsd-other", "Yes")
+            },
+            {
+              "value": "No",
+              "text": "No",
+              "name": "No",
+              "checked": checked("hear-from-nhsd-other", "No")
             }
           ]
         }) }}
