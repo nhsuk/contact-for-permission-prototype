@@ -358,33 +358,25 @@
               Change <span class="nhsuk-u-visually-hidden">Permission for researchers to contact me about taking part in vaccine studies to find a vaccine for coronavirus</span>
             </a>
           </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-              Contact from NHS Digital about how the coronavirus vaccine studies are going
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['hear-from-nhsd'] }}
-          </dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/{{ version }}/hear-from-nhsd">
-              Change <span class="nhsuk-u-visually-hidden">Contact from NHS Digital about how the coronavirus vaccine studies are going</span>
-            </a>
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-              Contact from NHS Digital about developments to this service
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['hear-from-nhsd-other'] }}
-          </dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/{{ version }}/hear-from-nhsd">
-              Change <span class="nhsuk-u-visually-hidden">Contact from NHS Digital about developments to this service/span>
-            </a>
-          </dd>
-        </div>
+        </div>    
+        
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Permission for NHS Digital to contact me about
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <ul class="nhsuk-list">
+                  {% for item in data['hear-from-nhsd'] | toArray %}
+                    <li>{{ item }}</li>
+                  {% endfor %}
+                </ul>
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a class="nhsuk-link" href="/{{ version }}/hear-from-nhsd">
+                  Change <span class="nhsuk-u-visually-hidden">Permission for NHS Digital to contact me about</span>
+                </a>
+              </dd>
+            </div>
 
       </dl>
 
