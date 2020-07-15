@@ -2,7 +2,7 @@
 
 {% set version = "v4" %}
 {% set backLink = "permission" %}
-{% set heading = "Get involved in other health research" %}
+{% set heading = "Contact from NHS Digital" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 
@@ -11,69 +11,10 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-u-margin-bottom-5">{{ heading }}</h1>
-      <p>There is a lot of health research taking place in the UK about coronavirus and other health conditions. This research aims to find the most effective medicines and treatments.</p>
-      
-      <div class="nhsuk-inset-text nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5">
-        <p>For more information about other types of health research see <a href="https://www.bepartofresearch.nihr.ac.uk/" target="_blank" rel="noopener noreferrer">Be Part of Research <span class="nhsuk-u-visually-hidden"> - Page opens in new window</span></a><span aria-hidden="true"> (opens in new window)</span>, which is provided by the National Institute for Health Research, the research partner of the NHS, public health and social care.</p>
-      </div>
 
-      <p>NHS Digital would like to tell you about how the coronavirus vaccine studies are going. We also plan to develop this sign up service, to provide chances to take part in other types of health research.</p>
+      <p>NHS Digital would like to tell you about how the coronavirus vaccine studies are going.</p>
 
-      <h2 class="nhsuk-heading-m">Do you give NHS Digital permission to contact you about:</h2>
-
-      <form action="/{{ version }}/check-answers" method="post" class="form">
-      
-        {{ radios({
-          "idPrefix": "hear-from-nhsd",
-          "name": "hear-from-nhsd",
-          "fieldset": {
-            "legend": {
-              "text": "How the coronavirus vaccine studies are going?",
-              "classes": "nhsuk-u-margin-bottom-4"
-            }
-          },
-          "items": [
-            {
-              "value": "Yes",
-              "text": "Yes",
-              "name": "Yes",
-              "checked": checked("hear-from-nhsd", "Yes")
-            },
-            {
-              "value": "No",
-              "text": "No",
-              "name": "No",
-              "checked": checked("hear-from-nhsd", "No")
-            }
-          ]
-        }) }}
-
-        {{ radios({
-          "idPrefix": "hear-from-nhsd-other",
-          "name": "hear-from-nhsd-other",
-          "fieldset": {
-            "legend": {
-              "text": "Developments to this service, such as information about taking part in other types of health research?",
-              "classes": "nhsuk-u-margin-bottom-4"
-            }
-          },
-          "items": [
-            {
-              "value": "Yes",
-              "text": "Yes",
-              "name": "Yes",
-              "checked": checked("hear-from-nhsd-other", "Yes")
-            },
-            {
-              "value": "No",
-              "text": "No",
-              "name": "No",
-              "checked": checked("hear-from-nhsd-other", "No")
-            }
-          ]
-        }) }}
-
-        <details class="nhsuk-details">
+      <details class="nhsuk-details">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
               Who is NHS Digital?
@@ -84,6 +25,39 @@
             <p>This includes working with the National Institute for Health Research and researchers to collect and share data to support health research into coronavirus and other health conditions. </p>            
           </div>
         </details>
+
+        <p>We also plan to develop this sign up service, to provide chances to take part in other types of health research.</p>
+
+      <form action="/{{ version }}/check-answers" method="post" class="form">
+
+          {{ checkboxes({
+            "idPrefix": "hear-from-nhsd",
+            "name": "hear-from-nhsd",
+            "fieldset": {
+              "legend": {
+                "text": "I give NHS Digital permission to contact me about:",
+                "classes": "nhsuk-fieldset__legend--m",
+                isPageHeading: true
+              }
+            },
+            "hint": {
+              "text": "Select all that apply"
+            },
+            "items": [
+              {
+                "value": "how coronavirus vaccine studies are going",
+                "text": "how coronavirus vaccine studies are going",
+                "name": "how coronavirus vaccine studies are going",
+                "checked": checked("hear-from-nhsd", "how coronavirus vaccine studies are going")
+              },
+              {
+                "value": "developments to this service",
+                "text": "developments to this service",
+                "name": "developments to this service",
+                "checked": checked("hear-from-nhsd", "developments to this service")
+              }
+            ]
+          }) }}
         
         {{ button({
           "text": "Continue"
