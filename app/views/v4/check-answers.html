@@ -81,13 +81,17 @@
         </dd>
       </div>
 
-      {% if (data['gender'] !== "No") %}
+      
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Gender
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['gender'] }}
+          {% if (data['gender-other']) %}
+            {{ data['gender-other'] }}
+          {% else %}
+            {{ data['gender'] }}
+          {% endif %}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a class="nhsuk-link" href="/{{ version }}/your-gender">
@@ -95,22 +99,6 @@
           </a>
         </dd>
       </div>
-        {% else %}
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Gender
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['gender-other'] }}
-          </dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/{{ version }}/your-gender">
-              Change <span class="nhsuk-u-visually-hidden">Gender</span>
-            </a>
-          </dd>
-        </div>
-  
-      {% endif %}
       
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">

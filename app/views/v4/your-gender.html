@@ -16,8 +16,9 @@
           id: "gender-other",
           name: "gender-other",
           classes: "nhsuk-u-width-two-thirds",
+          value: data['gender-other'],
           label: {
-            text: "Your gender"
+            text: "Your gender (Optional)"
           }
         }) }}
       {% endset -%}
@@ -40,7 +41,7 @@
             "checked": checked("gender", "Same as sex registered at birth")
           },
           {
-            "value": "No",
+            "value": "Not the same as the sex registered at birth",
             "text": "No",
             "name": "No",
             "checked": checked("gender", "Your gender"),
