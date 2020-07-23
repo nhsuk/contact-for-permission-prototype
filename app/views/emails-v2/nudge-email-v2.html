@@ -1,0 +1,23 @@
+{% extends 'layout-email.html' %}
+
+{% set version = "emails-v2" %}
+{% set bodyClasses = "app-email-body" %}
+{% set emailFrom = "contact-for.research@nhs.net" %}
+{% set emailTo = "joe.bloggs@google.com" %}
+{% set emailSubject = "NHS coronavirus vaccine studies: please sign up again" %}
+{% set serviceName = "There was a problem signing you up to be contacted for coronavirus vaccine studies" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+
+  <p>Thank you for starting to sign up to be contacted for coronavirus vaccine studies.</p>
+
+  <p>Unfortunately there was a problem sending you a confirmation email, so you were not able to finish signing up.</p>
+
+  <p>This issue has now been fixed, but you will need to sign up again if you are still interested in being contacted for coronavirus vaccine studies.</p>
+
+  <p>Sign up at: <a href="/v4">https://www.nhs.uk/sign-up-to-be-contacted-for-research</a>.</p>
+
+{% endblock %}
