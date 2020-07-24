@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout-nhs-overview.html' %}
 
 {% block pageTitle %}
   {{ heading }} - The NHS website
@@ -35,27 +35,36 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ breadcrumb({
-    items: [
-      {
-        href: "/",
-        text: "Home"
-      },
-      {
-        href: "#",
-        text: "Health A to Z"
-      },
-      {
-        href: "#",
-        text: "Coronavirus (COVID-19)"
-      }
-    ],
-    href: "#",
-    text: "Take part in research"
-  }) }}
+  <nav class="nhsuk-breadcrumb nhsuk-breadcrumb--hub" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      
+      <li class="nhsuk-breadcrumb__item">
+          <a href="/" class="nhsuk-breadcrumb__link">Home</a>
+        </li>
+        
+      <li class="nhsuk-breadcrumb__item">
+          <a href="/conditions/" class="nhsuk-breadcrumb__link">Health A to Z</a>
+        </li>
+        
+      <li class="nhsuk-breadcrumb__item">
+          <a href="/conditions/coronavirus-covid-19/" class="nhsuk-breadcrumb__link">Coronavirus (COVID-19)</a>
+        </li>
+        
+      <li class="nhsuk-breadcrumb__item">
+          <a href="/conditions/coronavirus-covid-19/research/" class="nhsuk-breadcrumb__link">Take part in research</a>
+        </li>
+        
+      </ol>
+
+      <p class="nhsuk-breadcrumb__back">
+        
+          <a href="/conditions/coronavirus-covid-19/research/" class="nhsuk-breadcrumb__backlink">Back to Take part in research</a>
+        
+      </p>
+    </div>
+  </nav>
 {% endblock %}
 
 {% block beforeMain %}
 {% endblock %}
-
-
