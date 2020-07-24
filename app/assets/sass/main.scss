@@ -61,6 +61,65 @@ h1 {
 // Prototype CSS only 
 ///////////////////////////////////////////
 
+// Global NHS alert
+
+.nhsuk-global-alert{background-color:#ffeb3b;padding-bottom:24px;padding-top:24px}
+
+@media print{.nhsuk-global-alert{display:none}}
+
+.nhsuk-global-alert a{color:#005eb8}
+
+.nhsuk-global-alert a:focus{background-color:#003d78;box-shadow:0 0 0 4px #003d78;color:#fff;outline:4px solid transparent;outline-offset:4px}
+
+.nhsuk-global-alert a:hover{background-color:#005eb8;box-shadow:0 0 0 4px #005eb8;color:#fff}
+
+.nhsuk-global-alert a:active{background-color:#002f5c;box-shadow:0 0 0 4px #003d78;color:#fff}
+
+.nhsuk-global-alert__content{position:relative}
+
+.nhsuk-global-alert__content>:first-child{margin-top:0}
+
+.nhsuk-global-alert__content>:last-child{margin-bottom:0}
+
+.nhsuk-global-alert__message h2,.nhsuk-global-alert__message h3{font-size:24px;line-height:1.33333;margin:0}
+
+.nhsuk-global-alert__message p{margin-top:8px;font-size:16px;line-height:1.5;display:block;margin-bottom:0}
+
+@media (min-width:40.0625em){.nhsuk-global-alert__message p{margin-top:8px}}
+
+@media (min-width:40.0625em){.nhsuk-global-alert__message p{font-size:19px}}
+
+// Related nav
+
+.nhsuk-related-nav{border-top:2px solid #005eb8}
+
+@media (max-width:48.0525em){.nhsuk-related-nav{margin-top:48px}}
+
+.nhsuk-related-nav__heading{font-size:20px;font-size:1.25rem;line-height:1.2;margin-bottom:16px;padding-top:16px}
+
+@media (min-width:40.0625em){.nhsuk-related-nav__heading{font-size:24px;font-size:1.5rem;line-height:1.2}}
+
+@media print{.nhsuk-related-nav__heading{font-size:18pt;line-height:1.2}}
+
+.nhsuk-related-nav__list{list-style:none;margin-bottom:16px;padding-left:0}
+
+.nhsuk-related-nav__item{font-size:14px;font-size:.875rem;line-height:1.71429}
+
+@media (min-width:40.0625em){.nhsuk-related-nav__item{font-size:16px;font-size:1rem;line-height:1.5}}
+
+@media print{.nhsuk-related-nav__item{font-size:14pt;line-height:1.2}}
+
+.nhsuk-related-nav__sub-heading{margin-bottom:8px;padding-top:8px;font-size:16px;font-size:1rem;line-height:1.2}
+
+@media (min-width:40.0625em){.nhsuk-related-nav__sub-heading{margin-bottom:8px}}
+
+@media (min-width:40.0625em){.nhsuk-related-nav__sub-heading{padding-top:8px}}
+
+@media (min-width:40.0625em){.nhsuk-related-nav__sub-heading{font-size:19px;font-size:1.1875rem;line-height:1.2}}
+
+@media print{.nhsuk-related-nav__sub-heading{font-size:14pt;line-height:1.2}}
+
+
 // Overrides auto reload div background colour
 #hc_extension_bkgnd {
   background-color: $color_nhsuk-grey-4 !important;
