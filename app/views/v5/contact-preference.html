@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% set version = "v5" %}
+{% set backLink = "postcode" %}
+{% set heading = "How would you like to be contacted?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/phone-number" method="post" class="form">
+
+        {{ radios({
+        "idPrefix": "contact-preference",
+        "name": "contact-preference",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "items": [
+          {
+            "value": "Email",
+            "text": "Email",
+            "name": "Email",
+            "checked": checked("contact-preference", "Email")
+          },
+          {
+            "value": "Phone",
+            "text": "Phone",
+            "name": "Phone",
+            "checked": checked("contact-preference", "Phone")
+          },
+          {
+            divider: "or"
+          },
+          {
+            "value": "Email or Phone",
+            "text": "Contact me by email or phone",
+            "name": "Email or Phone",
+            "checked": checked("contact-preference", "Email or Phone")
+          }
+        ]
+      }) }}
+        
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

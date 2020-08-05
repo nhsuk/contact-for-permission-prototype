@@ -6,6 +6,20 @@ const router = express.Router();
 
 // VERSION 5 //
 
+// Contact preference - V5
+router.post('/v5/phone-number', function (req, res) {
+
+  var install = req.session.data['contact-preference']
+
+  if (install == "Email"){
+    res.redirect('/v5/your-sex')
+  }
+  else {
+    res.redirect('/v5/phone-number')
+  }
+
+})
+
 // Over 18 routing - V5
 router.post('/v5/country', function (req, res) {
 

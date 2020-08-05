@@ -58,6 +58,20 @@
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
+            Contact preference
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['contact-preference'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/contact-preference">
+            Change <span class="nhsuk-u-visually-hidden">Contact preference</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
             Email address
         </dt>
         <dd class="nhsuk-summary-list__value">
@@ -66,6 +80,23 @@
         <dd class="nhsuk-summary-list__actions">
         </dd>
       </div>
+
+      {% if (data['contact-preference'] == "Email") %}
+        {% else %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['phone-number'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/phone-number">
+              Change <span class="nhsuk-u-visually-hidden">Phone number</span>
+            </a>
+          </dd>
+        </div>
+      {% endif %}
         
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
@@ -349,14 +380,28 @@
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-              Contact from NHS Digital about about other health research
+            Contact from NHS Digital about how the coronavirus vaccine studies are going
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {{ data['hear-from-nhsd'] }}
+            {{ data['hear-from-nhsd-covid'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/hear-from-nhsd">
-              Change <span class="nhsuk-u-visually-hidden">Contact from NHS Digital about about other health research</span>
+              Change <span class="nhsuk-u-visually-hidden">Contact from NHS Digital about how the coronavirus vaccine studies are going</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Developments to this service, including the chance to take part in other types of health research
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['hear-from-nhsd-this-service'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/hear-from-nhsd">
+              Change <span class="nhsuk-u-visually-hidden">Developments to this service, including the chance to take part in other types of health research</span>
             </a>
           </dd>
         </div>
