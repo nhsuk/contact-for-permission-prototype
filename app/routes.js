@@ -4,6 +4,146 @@ const router = express.Router();
 
 // Add your routes here - above the module.exports line
 
+// VERSION 5 //
+
+// Over 18 routing - V5
+router.post('/v5/country', function (req, res) {
+
+  var install = req.session.data['18orover']
+
+  if (install == "No"){
+    res.redirect('/v5/under18')
+  }
+  else {
+    res.redirect('/v5/country')
+  }
+
+})
+
+// Confirm email - v5
+router.post('/v5/what-we-ask-for', function (req, res) {
+
+  var install = req.session.data['confirm-email']
+
+  if (install == "No, that is not my email address"){
+    res.redirect('/v5/email')
+  }
+  else {
+    res.redirect('/v5/what-we-ask-for')
+  }
+
+})
+
+// No permission confirmation - V5
+router.post('/v5/no-permission-confirmed', function (req, res) {
+
+  var install = req.session.data['no-permission-confirmed']
+
+  if (install == "I confirm I do not give my permission"){
+    res.redirect('/v5/no-permission-confirmed')
+  }
+  else {
+    res.redirect('/v5/permission')
+  }
+
+})
+
+// Pregnant routing - V5
+router.post('/v5/are-you-pregnant', function (req, res) {
+
+  var install = req.session.data['sex']
+
+  if (install == "Female"){
+    res.redirect('/v5/are-you-pregnant')
+  }
+  else {
+    res.redirect('/v5/flu-jab')
+  }
+
+})
+
+// Contact with different people routing - V5
+router.post('/v5/health-social-care', function (req, res) {
+
+  var install = req.session.data['work']
+
+  if (install == "Yes, the work I'm doing at the moment means I have face to face contact with different people every day"){
+    res.redirect('/v5/health-social-care')
+  }
+  else {
+    res.redirect('/v5/tested')
+  }
+
+})
+
+// Tested routing - V5
+router.post('/v5/test-results', function (req, res) {
+
+  var install = req.session.data['tested']
+
+  if (install == "Yes"){
+    res.redirect('/v5/test-results')
+  }
+  else {
+    res.redirect('/v5/health-questions-interruption')
+  }
+
+})
+
+// Country routing - V5
+router.post('/v5/email-interruption', function (req, res) {
+
+  var install = req.session.data['country']
+
+  if (install == "None of these"){
+    res.redirect('/v5/outside-uk')
+  }
+  else {
+    res.redirect('/v5/email-interruption')
+  }
+
+})
+
+// Permission routing - V5
+router.post('/v5/hear-from-nhsd', function (req, res) {
+
+  var install = req.session.data['give-permission']
+
+  if (install == "No, I do not give my permission"){
+    res.redirect('/v5/no-permission')
+  }
+  else {
+    res.redirect('/v5/hear-from-nhsd')
+  }
+
+})
+
+// Ethnicity question routing - V5
+router.post('/v5/work', function (req, res) {
+
+  var install = req.session.data['ethnic-group']
+
+  if (install == "White"){
+    res.redirect('/v5/ethnic-group-white')
+  }
+  if (install == "Mixed or multiple ethnic groups"){
+    res.redirect('/v5/ethnic-group-mixed')
+  }
+  if (install == "Asian or Asian British"){
+    res.redirect('/v5/ethnic-group-asian')
+  }
+  if (install == "Black, African, Black British or Caribbean"){
+    res.redirect('/v5/ethnic-group-black')
+  }
+  else {
+    res.redirect('/v5/work')
+  }
+
+})
+
+// END OF VERSION 5 ROUTING //
+
+
 // Over 18 routing - V4
 router.post('/v4/country', function (req, res) {
 

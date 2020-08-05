@@ -1,0 +1,20 @@
+{% extends 'layout-email.html' %}
+
+{% set version = "emails-v3" %}
+{% set bodyClasses = "app-email-body" %}
+{% set emailFrom = "contact-for-research@nhsdigital.nhs.uk" %}
+{% set emailTo = "joe.bloggs@google.com" %}
+{% set emailSubject = "Confirm your email address" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+
+  <p>Confirm your email address to withdraw your permission to be contacted for coronavirus vaccine studies by clicking the link.</p>
+
+  <p><a href="/opt-out-v3/confirm-email">https://www.nhs.uk/sign-up-for-coronavirus-vaccine-research/email-confirmation/6e4c94de-8b47-4e2c-a82b-e4a99419a798</a></p>
+
+  <p>After 48 hours the link will not work.</p>
+
+{% endblock %}

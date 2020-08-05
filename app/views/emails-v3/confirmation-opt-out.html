@@ -1,0 +1,33 @@
+{% extends 'layout-email.html' %}
+
+{% set version = "emails-v3" %}
+{% set bodyClasses = "app-email-body" %}
+{% set emailFrom = "contact-for-research@nhsdigital.nhs.uk" %}
+{% set emailTo = "joe.bloggs@google.com" %}
+{% set emailSubject = "Confirmation of withdrawing your permission to take part in coronavirus vaccine studies" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+
+  <p>Dear Joe Bloggs,</p>
+
+  <p>You've withdrawn your permission to be contacted for coronavirus vaccine studies.</p>
+
+  <p>Your details have been removed from the contact list.</p>
+
+  <hr>
+
+  <h2 class="nhsuk-heading-m">What happens next</h2>
+  <p>You will no longer be contacted by any researchers about future coronavirus vaccine studies.</p>
+  <p>If your details have already been shared with researchers, we'll tell them to take you off their list. This may take 28 days. If a researcher contacts you within this time, you can tell them that you have withdrawn your permission.</p>
+  <p>This does not remove you from any trials you are currently taking part in.</p>
+  <p>NHS Digital will no longer contact you about any coronavirus prevention and treatment research, or any other health research.</p>
+
+  <hr>
+
+  <h2 class="nhsuk-heading-m">Giving your permission again</h2>
+  <p>If you change your mind, you can <a href="/v5">give your permission again to be contacted for taking part in coronavirus vaccine studies</a>.</p>
+
+{% endblock %}
