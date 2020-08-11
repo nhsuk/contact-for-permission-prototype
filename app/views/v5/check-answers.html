@@ -58,20 +58,6 @@
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-            Contact preference
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          {{ data['contact-preference'] }}
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a class="nhsuk-link" href="/{{ version }}/contact-preference">
-            Change <span class="nhsuk-u-visually-hidden">Contact preference</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
             Email address
         </dt>
         <dd class="nhsuk-summary-list__value">
@@ -80,23 +66,6 @@
         <dd class="nhsuk-summary-list__actions">
         </dd>
       </div>
-
-      {% if (data['contact-preference'] == "Email") %}
-        {% else %}
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Phone number
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['phone-number'] }}
-          </dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/{{ version }}/phone-number">
-              Change <span class="nhsuk-u-visually-hidden">Phone number</span>
-            </a>
-          </dd>
-        </div>
-      {% endif %}
         
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
@@ -378,6 +347,38 @@
             </a>
           </dd>
         </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+              Contact preference for taking part in approved UK coronavirus (COVID-19) vaccine studies
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['contact-preference'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/contact-preference">
+              Change <span class="nhsuk-u-visually-hidden">Contact preference for taking part in approved UK coronavirus (COVID-19) vaccine studies</span>
+            </a>
+          </dd>
+        </div>
+
+        {% if (data['contact-preference'] == "Email") %}
+        {% else %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['phone-number'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/phone-number">
+              Change <span class="nhsuk-u-visually-hidden">Phone number</span>
+            </a>
+          </dd>
+        </div>
+      {% endif %}
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Contact from NHS Digital about how the coronavirus vaccine studies are going

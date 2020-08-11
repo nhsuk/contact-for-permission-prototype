@@ -12,7 +12,7 @@ router.post('/v5/phone-number', function (req, res) {
   var install = req.session.data['contact-preference']
 
   if (install == "Email"){
-    res.redirect('/v5/your-sex')
+    res.redirect('/v5/hear-from-nhsd')
   }
   else {
     res.redirect('/v5/phone-number')
@@ -119,7 +119,7 @@ router.post('/v5/email-interruption', function (req, res) {
 })
 
 // Permission routing - V5
-router.post('/v5/hear-from-nhsd', function (req, res) {
+router.post('/v5/no-permission', function (req, res) {
 
   var install = req.session.data['give-permission']
 
@@ -127,7 +127,7 @@ router.post('/v5/hear-from-nhsd', function (req, res) {
     res.redirect('/v5/no-permission')
   }
   else {
-    res.redirect('/v5/hear-from-nhsd')
+    res.redirect('/v5/contact-preference')
   }
 
 })
