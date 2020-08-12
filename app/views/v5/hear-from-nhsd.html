@@ -1,7 +1,11 @@
 {% extends 'layout.html' %}
 
 {% set version = "v5" %}
-{% set backLink = "permission" %}
+{% if (data['contact-preference'] == "Email") %}
+  {% set backLink = "contact-preference" %}
+{% else %}
+  {% set backLink = "phone-number" %}
+{% endif %}
 {% set heading = "Get involved in other health research" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
@@ -17,7 +21,7 @@
         <p>For more information about other types of health research see <a href="https://www.bepartofresearch.nihr.ac.uk/" target="_blank" rel="noopener noreferrer">Be Part of Research<span class="nhsuk-u-visually-hidden"> - Page opens in new window</span></a><span aria-hidden="true"> (opens in new window)</span>, which is provided by the National Institute for Health Research, the research partner of the NHS, public health and social care.</p>
       </div>
 
-      <p>NHS Digital would like to tell you about how the coronavirus vaccine studies are going. We plan to develop this service, including offering the chance to take part in other types of health research.</p>
+      <p>NHS Digital would like to email you about how the coronavirus vaccine studies are going. We plan to develop this service, including offering the chance to take part in other types of health research.</p>
 
       <details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
@@ -31,7 +35,7 @@
         </div>
       </details>
 
-      <h2 class="nhsuk-u-margin-bottom-5">Do you give NHS Digital permission to contact you about:</h2>
+      <h2 class="nhsuk-u-margin-bottom-5">Do you give NHS Digital permission to email you about:</h2>
       <form action="/{{ version }}/check-answers" method="post" class="form">
       
         {{ radios({
