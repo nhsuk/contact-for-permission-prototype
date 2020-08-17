@@ -123,6 +123,16 @@ h1 {
 
 @media print{.nhsuk-related-nav__sub-heading{font-size:14pt;line-height:1.2}}
 
+// Sibling nav
+
+.nhsuk-hub-sibling-nav{border-top:0}
+
+.nhsuk-hub-sibling-nav .nhsuk-hub-sibling-nav--current{border-left:4px solid #212b32;color:#212b32;margin-left:-12px;padding-left:8px}
+
+.nhsuk-hub-sibling-nav .nhsuk-hub-sibling-nav__item{padding-bottom:4px;padding-top:4px}
+
+.nhsuk-hub-sibling-nav .nhsuk-hub-sibling-nav__list{padding-left:12px}
+
 
 // Overrides auto reload div background colour
 #hc_extension_bkgnd {
