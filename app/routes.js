@@ -9,10 +9,10 @@ const router = express.Router();
 // Contact preference - V5
 router.post('/v5/phone-number', function (req, res) {
 
-  var install = req.session.data['contact-preference']
+  var install = req.session.data['contact-by-phone']
 
-  if (install == "Email"){
-    res.redirect('/v5/hear-from-nhsd')
+  if (install == "No"){
+    res.redirect('/v5/your-sex')
   }
   else {
     res.redirect('/v5/phone-number')
@@ -127,7 +127,7 @@ router.post('/v5/no-permission', function (req, res) {
     res.redirect('/v5/no-permission')
   }
   else {
-    res.redirect('/v5/contact-preference')
+    res.redirect('/v5/hear-from-nhsd')
   }
 
 })

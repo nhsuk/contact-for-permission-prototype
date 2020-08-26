@@ -58,7 +58,7 @@
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-            Email address
+          Email address
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['email'] }}
@@ -67,8 +67,21 @@
         </dd>
       </div>
 
-      {% if (data['contact-preference'] == "Email") %}
-        {% else %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Happy for researchers to contact by phone
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['contact-by-phone'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/contact-by-phone">
+            Change <span class="nhsuk-u-visually-hidden">Happy for researchers to contact by phone</span>
+          </a>
+        </dd>
+      </div>
+
+      {% if (data['contact-by-phone'] == "Yes") %}
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Phone number
@@ -82,6 +95,7 @@
             </a>
           </dd>
         </div>
+        {% else %}
       {% endif %}
         
       <div class="nhsuk-summary-list__row">
@@ -361,20 +375,6 @@
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/permission">
               Change <span class="nhsuk-u-visually-hidden">Permission for researchers to contact me about taking part in health research to find a vaccine for coronavirus</span>
-            </a>
-          </dd>
-        </div>
-
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-              Contact preference for taking part in approved UK coronavirus (COVID-19) vaccine studies
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['contact-preference'] }}
-          </dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/{{ version }}/contact-preference">
-              Change <span class="nhsuk-u-visually-hidden">Contact preference for taking part in approved UK coronavirus (COVID-19) vaccine studies</span>
             </a>
           </dd>
         </div>
