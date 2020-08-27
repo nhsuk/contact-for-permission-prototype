@@ -3,13 +3,7 @@
 {% set version = "v5" %}
 {% set heading = "What sex were you registered at birth?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
-
-{% if (data['contact-by-phone'] == "Yes") %}
-  {% set backLink = "phone-number" %}
-{% else %}
-  {% set backLink = "contact-by-phone" %}
-{% endif %}
-
+{% set backLink = "phone-number" %}
 
 {% block content %}
   <div class="nhsuk-grid-row">

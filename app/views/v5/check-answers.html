@@ -69,34 +69,21 @@
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-            Contact by phone
+          Phone number
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['contact-by-phone'] }}
+          {% if (data['phone-number']) %}
+            {{ data['phone-number'] }}
+          {% else %}
+            Not provided
+          {% endif %}
         </dd>
         <dd class="nhsuk-summary-list__actions">
-          <a class="nhsuk-link" href="/{{ version }}/contact-by-phone">
-            Change <span class="nhsuk-u-visually-hidden">Contact by phone</span>
+          <a class="nhsuk-link" href="/{{ version }}/phone-number">
+            Change <span class="nhsuk-u-visually-hidden">Phone number</span>
           </a>
         </dd>
       </div>
-
-      {% if (data['contact-by-phone'] == "Yes") %}
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Phone number
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['phone-number'] }}
-          </dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/{{ version }}/phone-number">
-              Change <span class="nhsuk-u-visually-hidden">Phone number</span>
-            </a>
-          </dd>
-        </div>
-        {% else %}
-      {% endif %}
         
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
