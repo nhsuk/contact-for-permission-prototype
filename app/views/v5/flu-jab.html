@@ -6,7 +6,7 @@
 {% else %}
   {% set backLink = "health-questions-interruption" %}
 {% endif %}
-{% set heading = "Are you usually offered a free seasonal flu jab?" %}
+{% set heading = "Are you offered a free seasonal flu jab?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block content %}
@@ -24,6 +24,9 @@
             "classes": "nhsuk-fieldset__legend--l",
             "isPageHeading": true
           }
+        },
+        "hint": {
+          "text": "This could be because of your age, your job or a health condition. If you pay for a flu jab, choose No"
         },
         "items": [
           {
