@@ -1,0 +1,60 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = "cancer" %}
+{% set heading = "A yw meddyg wedi dweud wrthych fod gennych anhwylder gwaedu?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/immune-system" method="post" class="form">
+
+        {{ radios({
+          "idPrefix": "bleeding-disorder",
+          "name": "bleeding-disorder",
+          "fieldset": {
+            "legend": {
+              "text": heading,
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "hint": {
+            "text": "Rhai enghreifftiau yw diffyg ffactor, coagulopathi, anhwylder platennau, neu rydych chi wedi cael gwaedu neu gleisio difrifol ar ôl i chi gael pigiad neu gymryd gwaed"
+          },
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Ydyw",
+              "name": "Yes",
+              "checked": checked("bleeding-disorder", "Yes")
+            },
+            {
+              "value": "No",
+              "text": "Nac ydyw",
+              "name": "No",
+              "checked": checked("bleeding-disorder", "No")
+            },
+            {
+              divider: "neu"
+            },
+            {
+              "value": "I'm not sure",
+              "text": "Dwi ddim yn siŵr",
+              "name": "I'm not sure",
+              "checked": checked("bleeding-disorder", "I'm not sure")
+            }
+          ]
+        }) }}
+
+      {{ button({
+        "text": "Parhewch"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

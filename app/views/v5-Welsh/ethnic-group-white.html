@@ -1,0 +1,90 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = "ethnic-group" %}
+{% set heading = "Pa un sy'n disgrifio'ch cefndir Gwyn orau?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/work" method="post" class="form">
+
+      {% set whiteOtherHtml %}
+        {{ input({
+          id: "ethnicity-other",
+          name: "ethnicity-other",
+          classes: "nhsuk-u-width-two-thirds",
+          label: {
+            text: "Eich cefndir Gwyn chi (opsiynol)"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ radios({
+        idPrefix: "ethnic-group",
+        name: "ethnic-group",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "nhsuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "British, English, Northern Irish, Scottish, or Welsh",
+            text: "Prydeinig, Seisnig, Gogledd Iwerddon, yr Alban neu Gymreig",
+            checked: checked("ethnic-group", "British, English, Northern Irish, Scottish, or Welsh")
+          },
+          {
+            value: "Irish",
+            text: "Gwyddelig",
+            checked: checked("ethnic-group", "Irish")
+          },
+          {
+            value: "Irish Traveller or Gypsy",
+            text: "Teithiwr Gwyddelig neu Sipsi",
+            checked: checked("ethnic-group", "Irish Traveller or Gypsy")
+          },
+          {
+            value: "Another White background",
+            text: "Cefndir Gwyn arall",
+            checked: checked("ethnic-group", "Another White background"),
+            conditional: {
+              html: whiteOtherHtml
+            }
+          },
+          {
+            divider: "neu"
+          },
+          {
+            value: "Prefer not to say",
+            text: "Mae'n well gen i beidio â dweud",
+            checked: checked("ethnic-group", "Prefer not to say"),
+            label: {
+              classes: 'nhsuk-label'
+            }
+          }
+        ]
+      }) }}
+
+      {{ details({
+        "text": "Pam yr ydym yn gofyn y cwestiwn hwn",
+        "HTML": "
+          <p>Rydym yn gwybod bod coronafeirws yn effeithio ar bobl o wahanol grwpiau ethnig yn wahanol.</p>
+          <p>Mae adnabod eich grŵp ethnig yn ein helpu i sicrhau bod y gymysgedd iawn o bobl o wahanol grwpiau ethnig yn cymryd rhan mewn astudiaethau brechlyn.</p>
+          <p>Mae hyn er mwyn i ni sicrhau y bydd unrhyw frechlynnau a ddatblygir yn gweithio i bawb.</p>
+        "
+      }) }}
+
+      {{ button({
+        "text": "Parhewch"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

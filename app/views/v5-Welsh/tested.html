@@ -1,0 +1,57 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+
+{% if (data['work'] == "Yes, the work I'm doing at the moment means I have face to face contact with different people every day") %}
+  {% set backLink = "health-social-care" %}
+{% else %}
+  {% set backLink = "work" %}
+{% endif %}
+
+{% set heading = "Ydych chi wedi cael prawf coronafeirws?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/test-results" method="post" class="form">
+
+       {{ radios({
+        "idPrefix": "tested",
+        "name": "tested",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "hint": {
+          "text": "Gallai hwn fod yn brawf i weld a oes gennych goronafeirws nawr (prawf antigen) neu a ydych wedi'i gael yn y gorffennol (prawf gwrthgorff)"
+        },
+        "items": [
+          {
+            "value": "Yes",
+            "text": "Ydw",
+            "name": "Yes",
+            "checked": checked("tested", "Yes")
+          },
+          {
+            "value": "No",
+            "text": "Nac ydw",
+            "name": "No",
+            "checked": checked("tested", "No")
+          }
+        ]
+      }) }}
+
+        {{ button({
+          "text": "Parhewch"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

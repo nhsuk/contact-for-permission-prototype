@@ -1,0 +1,37 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = "confirmed-email" %}
+{% set heading = "Nawr rydym am ofyn rhai cwestiynau i chi" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-card nhsuk-card--blue nhsuk-u-padding-1">
+        <div class="nhsuk-card__content">
+          <h1 class="nhsuk-card__heading nhsuk-u-margin-bottom-5">{{ heading }}</h1>
+          <p>Byddwn yn gofyn am ychydig o wybodaeth amdanoch chi, gan gynnwys eich:</p>
+          <ul>
+            <li>enw</li>
+            <li>dyddiad geni</li>
+            <li>cod post</li>
+            <li>rhyw a gofrestrwyd adeg genedigaeth a rhywedd</li>
+            <li>grŵp ethnig</li>
+          </ul>
+          <p>Gofynnwn hyn fel y gallwn:</p> 
+          <ul>
+            <li>gael y gymysgedd iawn o wahanol bobl i gymryd rhan mewn astudiaethau brechlyn</li>
+            <li>sicrhau y bydd unrhyw frechlynnau a ddatblygir yn gweithio i bawb</li>
+          </ul>
+          <form action="name" method="post">
+            <input type="submit" class="nhsuk-button nhsuk-button--reverse nhsuk-u-margin-bottom-4" value="Parhewch">
+          </form>
+          <p>Bydd NHS Digital yn cadw'ch atebion yn ddiogel. <a href="/privacy" target="_blank" rel="noopener noreferrer">Darganfyddwch yn y polisi preifatrwydd sut y bydd eich data yn cael ei brosesu gan ddefnyddio'r gwasanaeth hwn<span class="nhsuk-u-visually-hidden"> - Tudalen yn agor mewn ffenestr newydd</span></a> (yn agor mewn ffenestr newydd).</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = "diabetes" %}
+{% set heading = "Oes gennych chi asthma sy'n anodd ei reoli?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/lung-disease" method="post" class="form">
+
+        {{ radios({
+          "idPrefix": "asthma",
+          "name": "asthma",
+          "fieldset": {
+            "legend": {
+              "text": heading,
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "hint": {
+            "text": "Er enghraifft, rydych wedi cael eich derbyn i'r ysbyty oherwydd asthma yn ystod y 12 mis diwethaf, neu rydych wedi dechrau cael mwy o byliau nag arfer. Os oes gennych asthma sydd o dan reolaeth, dewiswch Na"
+          },
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Oes",
+              "name": "Yes",
+              "checked": checked("asthma", "Yes")
+            },
+            {
+              "value": "No",
+              "text": "Nac oes",
+              "name": "No",
+              "checked": checked("asthma", "No")
+            },
+            {
+              divider: "neu"
+            },
+            {
+              "value": "I'm not sure",
+              "text": "Dwi ddim yn siŵr",
+              "name": "I'm not sure",
+              "checked": checked("asthma", "I'm not sure")
+            }
+          ]
+        }) }}
+
+      {{ button({
+        "text": "Parhewch"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

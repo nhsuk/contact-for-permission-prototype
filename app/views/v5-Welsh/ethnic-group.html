@@ -1,0 +1,122 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = "your-gender" %}
+{% set heading = "Beth yw eich grŵp ethnig?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/work" method="post" class="form">
+
+        {% set ethnicGroupOtherHtml %}
+        {{ input({
+          id: "ethnicity-other",
+          name: "ethnicity-other",
+          classes: "nhsuk-u-width-two-thirds",
+          label: {
+            text: "Eich grŵp ethnig (opsiynol)"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ radios({
+        idPrefix: "ethnic-group",
+        name: "ethnic-group",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "nhsuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Asian or Asian British",
+            text: "Prydeinig Asiaidd neu Asiaidd",
+            checked: checked("ethnic-group", "Asian or Asian British"),
+            label: {
+              classes: 'nhsuk-label--s'
+            },
+            hint: {
+              text: 'Yn cynnwys unrhyw gefndir Asiaidd, er enghraifft, Bangladeshaidd, Tsieineaidd, Indiaidd, Pacistanaidd neu Dde neu Ddwyrain Asiaidd arall'
+            }
+          },
+          {
+            value: "Black, African, Black British or Caribbean",
+            text: "Du, Affricanaidd, Du Prydeinig neu Caribî",
+            checked: checked("ethnic-group", "Black, African, Black British or Caribbean"),
+            label: {
+              classes: 'nhsuk-label--s'
+            },
+            hint: {
+              text: 'Yn cynnwys unrhyw gefndir Du'
+            }
+          },
+          {
+            value: "Mixed or multiple ethnic groups",
+            text: "Grwpiau ethnig cymysg neu luosog",
+            checked: checked("ethnic-group", "Mixed or multiple ethnic groups"),
+            label: {
+              classes: 'nhsuk-label--s'
+            },
+            hint: {
+              text: 'Yn cynnwys unrhyw gefndir Cymysg'
+            }
+          },
+          {
+            value: "White",
+            text: "Gwyn",
+            checked: checked("ethnic-group", "White"),
+            label: {
+              classes: 'nhsuk-label--s'
+            },
+            hint: {
+              text: 'Yn cynnwys unrhyw gefndir Gwyn'
+            }
+          },
+          {
+            value: "Another ethnic group",
+            text: "Grŵp ethnig arall",
+            checked: checked("ethnic-group", "Another ethnic group"),
+            label: {
+              classes: 'nhsuk-label--s'
+            },
+            conditional: {
+              html: ethnicGroupOtherHtml
+            }
+          },
+          {
+            divider: "neu"
+          },
+          {
+            value: "Prefer not to say",
+            text: "Mae'n well gen i beidio â dweud",
+            checked: checked("ethnic-group", "Prefer not to say"),
+            label: {
+              classes: 'nhsuk-label'
+            }
+          }
+        ]
+      }) }}
+
+      {{ details({
+        "text": "Pam yr ydym yn gofyn y cwestiwn hwn",
+        "HTML": "
+          <p>Rydym yn gwybod bod coronafeirws yn effeithio ar bobl o wahanol grwpiau ethnig yn wahanol.</p>
+          <p>Mae adnabod eich grŵp ethnig yn ein helpu i sicrhau bod y gymysgedd iawn o bobl o wahanol grwpiau ethnig yn cymryd rhan mewn astudiaethau brechlyn.</p>
+          <p>Mae hyn er mwyn i ni sicrhau y bydd unrhyw frechlynnau a ddatblygir yn gweithio i bawb.</p>
+        "
+      }) }}
+
+      {{ button({
+        "text": "Parhewch"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

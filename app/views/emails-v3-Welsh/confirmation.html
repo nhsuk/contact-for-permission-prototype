@@ -1,0 +1,43 @@
+{% extends 'layout-email-Welsh.html' %}
+
+{% set version = "emails-v3-Welsh" %}
+{% set bodyClasses = "app-email-body" %}
+{% set emailFrom = "contact-for-research@nhsdigital.nhs.uk" %}
+{% set emailTo = "joe.bloggs@google.com" %}
+{% set emailSubject = "Thank you for registering your permission to take part in coronavirus vaccine studies" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+
+  <p>Dear Joe Bloggs,</p>
+
+  <p>Thank you. You've given your permission to be contacted about taking part in coronavirus vaccine studies.</p>
+
+  <p>Vaccine studies are the only way to find effective vaccines. Thank you for helping the NHS to save lives.</p>
+
+  <hr>
+
+  <h2 class="nhsuk-heading-m">What happens next</h2>
+  <p>You will get an email if researchers think you may be suitable for their coronavirus vaccine studies. The email may come directly from researchers, or from NHS Digital.</p>
+
+  <p>In England, the research partner of the NHS is the National Institute for Health Research (NIHR). The NIHR is working with equivalent NHS research partners in Northern Ireland, Scotland and Wales on vaccine studies. If you sign up to be contacted about vaccine studies, only researchers on studies approved by NIHR will be able to contact you.</p>
+
+  <p>You can find out more information about the vaccine studies on NIHR's <a href="https://www.bepartofresearch.nihr.ac.uk/vaccine-studies/">Be Part of Research website</a>.</p>
+
+  <p>There is no guarantee you'll be contacted to be part of vaccine studies. If you are not contacted, this will be because researchers already have the mix of people they need.</p>
+
+  <p>If a researcher asks you to take part in their research, you do not have to say yes. It's your choice.</p>
+
+  <h3 class="nhsuk-heading-s">Contact from NHS Digital</h3>
+  <p>If you agreed to NHS Digital contacting you about how the coronavirus vaccine studies are going, and developments to this service including the chance to take part in other health research, they will contact you when there's new information to share. You will be able to unsubscribe at any time.</p>
+  <p>Find out in the privacy policy <a href="#">how your data will be processed using this service</a>.</p>
+
+  <hr>
+
+  <h2 class="nhsuk-heading-m">Withdraw your permission</h2>
+  <p>Find out how to <a href="/opt-out-v2/confirm-email">withdraw your permission to be contacted for coronavirus vaccine studies</a>.</p>
+
+
+{% endblock %}

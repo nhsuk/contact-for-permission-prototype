@@ -42,6 +42,7 @@ app.locals.asset_path = '/public/'
 app.locals.useAutoStoreData = (useAutoStoreData === 'true')
 app.locals.useCookieSessionStore = (useCookieSessionStore === 'true')
 app.locals.serviceName = config.serviceName
+app.locals.welshServiceName = config.welshServiceName
 
 
 // Nunjucks configuration for application

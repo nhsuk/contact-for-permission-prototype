@@ -1,0 +1,61 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = "asthma" %}
+{% set heading = "A yw meddyg wedi dweud wrthych fod gennych gyflwr ysgyfaint tymor hir (heb gynnwys asthma)?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/liver-disease" method="post" class="form">
+
+        {{ radios({
+          "idPrefix": "lung-disease",
+          "name": "lung-disease",
+          "fieldset": {
+            "legend": {
+              "text": heading,
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          
+        "hint": {
+          "text": "Rhai enghreifftiau yw emffysema, COPD, broncitis cronig, ffibrosis systig, ffibrosis pwlmonaidd idiopathig"
+        },
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Ydyw",
+              "name": "Yes",
+              "checked": checked("lung-disease", "Yes")
+            },
+            {
+              "value": "No",
+              "text": "Nac ydyw",
+              "name": "No",
+              "checked": checked("lung-disease", "No")
+            },
+            {
+              divider: "neu"
+            },
+            {
+              "value": "I'm not sure",
+              "text": "Dwi ddim yn siŵr",
+              "name": "I'm not sure",
+              "checked": checked("lung-disease", "I'm not sure")
+            }
+          ]
+        }) }}
+
+      {{ button({
+        "text": "Parhewch"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
