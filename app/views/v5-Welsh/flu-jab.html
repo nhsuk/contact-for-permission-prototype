@@ -1,7 +1,7 @@
 {% extends 'layout-Welsh.html' %}
 
 {% set version = "v5-Welsh" %}
-{% if (data['sex'] == "Female") %}
+{% if (data['sex'] == "Benyw") %}
   {% set backLink = "are-you-pregnant" %}
 {% else %}
   {% set backLink = "health-questions-interruption" %}
@@ -30,25 +30,25 @@
         },
         "items": [
           {
-            "value": "Yes",
+            "value": "Ydw",
             "text": "Ydw",
-            "name": "Yes",
-            "checked": checked("flujab", "Yes")
+            "name": "Ydw",
+            "checked": checked("flujab", "Ydw")
           },
           {
-            "value": "No",
+            "value": "Nac ydw",
             "text": "Nac ydw",
-            "name": "No",
-            "checked": checked("flujab", "No")
+            "name": "Nac ydw",
+            "checked": checked("flujab", "Nac ydw")
           },
           {
             divider: "neu"
           },
           {
-            "value": "I'm not sure",
+            "value": "Dwi ddim yn siŵr",
             "text": "Dwi ddim yn siŵr",
-            "name": "I'm not sure",
-            "checked": checked("flujab", "I'm not sure")
+            "name": "Dwi ddim yn siŵr",
+            "checked": checked("flujab", "Dwi ddim yn siŵr")
           }
         ]
       }) }}

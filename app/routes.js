@@ -7,26 +7,12 @@ const router = express.Router();
 
 // VERSION 5 WELSH //
 
-// Contact preference - V5 WELSH
-router.post('/v5-Welsh/phone-number', function (req, res) {
-
-  var install = req.session.data['contact-by-phone']
-
-  if (install == "No"){
-    res.redirect('/v5-Welsh/your-sex')
-  }
-  else {
-    res.redirect('/v5-Welsh/phone-number')
-  }
-
-})
-
 // Over 18 routing - V5 WELSH
 router.post('/v5-Welsh/country', function (req, res) {
 
   var install = req.session.data['18orover']
 
-  if (install == "No"){
+  if (install == "Nac ydw"){
     res.redirect('/v5-Welsh/under18')
   }
   else {
@@ -54,7 +40,7 @@ router.post('/v5-Welsh/no-permission-confirmed', function (req, res) {
 
   var install = req.session.data['no-permission-confirmed']
 
-  if (install == "I confirm I do not give my permission"){
+  if (install == "Rwy'n cadarnhau nad wyf yn rhoi fy nghaniatâd"){
     res.redirect('/v5-Welsh/no-permission-confirmed')
   }
   else {
@@ -68,7 +54,7 @@ router.post('/v5-Welsh/are-you-pregnant', function (req, res) {
 
   var install = req.session.data['sex']
 
-  if (install == "Female"){
+  if (install == "Benyw"){
     res.redirect('/v5-Welsh/are-you-pregnant')
   }
   else {
@@ -82,7 +68,7 @@ router.post('/v5-Welsh/health-social-care', function (req, res) {
 
   var install = req.session.data['work']
 
-  if (install == "Yes, the work I'm doing at the moment means I have face to face contact with different people every day"){
+  if (install == "Ydyw, mae'r gwaith rydw i'n ei wneud ar hyn o bryd yn golygu bod gen i gyswllt wyneb yn wyneb â gwahanol bobl bron bob dydd"){
     res.redirect('/v5-Welsh/health-social-care')
   }
   else {
@@ -96,7 +82,7 @@ router.post('/v5-Welsh/test-results', function (req, res) {
 
   var install = req.session.data['tested']
 
-  if (install == "Yes"){
+  if (install == "Ydw"){
     res.redirect('/v5-Welsh/test-results')
   }
   else {
@@ -110,7 +96,7 @@ router.post('/v5-Welsh/email-interruption', function (req, res) {
 
   var install = req.session.data['country']
 
-  if (install == "None of these"){
+  if (install == "‘Run o’r rhain"){
     res.redirect('/v5-Welsh/outside-uk')
   }
   else {
@@ -138,16 +124,16 @@ router.post('/v5-Welsh/work', function (req, res) {
 
   var install = req.session.data['ethnic-group']
 
-  if (install == "White"){
+  if (install == "Gwyn"){
     res.redirect('/v5-Welsh/ethnic-group-white')
   }
-  if (install == "Mixed or multiple ethnic groups"){
+  if (install == "Grwpiau ethnig cymysg neu luosog"){
     res.redirect('/v5-Welsh/ethnic-group-mixed')
   }
-  if (install == "Asian or Asian British"){
+  if (install == "Prydeinig Asiaidd neu Asiaidd"){
     res.redirect('/v5-Welsh/ethnic-group-asian')
   }
-  if (install == "Black, African, Black British or Caribbean"){
+  if (install == "Du, Affricanaidd, Du Prydeinig neu Caribî"){
     res.redirect('/v5-Welsh/ethnic-group-black')
   }
   else {
@@ -157,6 +143,8 @@ router.post('/v5-Welsh/work', function (req, res) {
 })
 
 // END OF VERSION 5 WELSH ROUTING //
+
+
 
 // VERSION 5 //
 

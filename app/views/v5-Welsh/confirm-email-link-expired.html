@@ -1,7 +1,7 @@
 {% extends 'layout-Welsh.html' %}
 
 {% set version = "v5-Welsh" %}
-{% set heading = "Confirmation email link has expired" %}
+{% set heading = "Mae’r ddolen e-bost cadarnhau wedi dod i ben" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block beforeMain %}
@@ -13,13 +13,13 @@
 
       <h1 class="nhsuk-heading-l">{{ heading }}</h1>
 
-      <p>The link has expired because:</p>
+      <p>Mae'r ddolen wedi dod i ben oherwydd:</p>
       <ul>
-        <li>it has been longer than 48 hours since we sent the email, or</li>
-        <li>we've sent you another confirmation email since then</li>
+        <li>bu’n hwy na 72 awr ers i ni anfon yr e-bost, neu</li>
+        <li>rydym wedi anfon e-bost cadarnhau arall atoch ers hynny</li>
       </ul>
 
-      <p>To confirm your email address, you need to <a href='/{{ version }}/email'>enter your email address again</a>.</p>
+      <p>I gadarnhau eich cyfeiriad e-bost, mae angen i chi gofnodi'ch <a href='/{{ version }}/email'>cyfeiriad e-bost eto</a>.</p>
 
     </div>
   </div>

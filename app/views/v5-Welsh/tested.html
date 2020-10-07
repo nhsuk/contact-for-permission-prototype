@@ -2,7 +2,7 @@
 
 {% set version = "v5-Welsh" %}
 
-{% if (data['work'] == "Yes, the work I'm doing at the moment means I have face to face contact with different people every day") %}
+{% if (data['work'] == "Ydyw, mae'r gwaith rydw i'n ei wneud ar hyn o bryd yn golygu bod gen i gyswllt wyneb yn wyneb â gwahanol bobl bron bob dydd") %}
   {% set backLink = "health-social-care" %}
 {% else %}
   {% set backLink = "work" %}
@@ -32,16 +32,16 @@
         },
         "items": [
           {
-            "value": "Yes",
+            "value": "Ydw",
             "text": "Ydw",
-            "name": "Yes",
-            "checked": checked("tested", "Yes")
+            "name": "Ydw",
+            "checked": checked("tested", "Ydw")
           },
           {
-            "value": "No",
+            "value": "Nac ydw",
             "text": "Nac ydw",
-            "name": "No",
-            "checked": checked("tested", "No")
+            "name": "Nac ydw",
+            "checked": checked("tested", "Nac ydw")
           }
         ]
       }) }}
