@@ -1,11 +1,7 @@
 {% extends 'layout-Welsh.html' %}
 
 {% set version = "v5-Welsh" %}
-{% if (data['contact-preference'] == "Email") %}
-  {% set backLink = "contact-preference" %}
-{% else %}
-  {% set backLink = "phone-number" %}
-{% endif %}
+{% set backLink = "permission" %}
 {% set heading = "Cymryd rhan mewn ymchwil iechyd arall" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 

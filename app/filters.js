@@ -61,5 +61,43 @@ module.exports = function (env) {
 
   }
 
+  filters.monthToWordWelsh = function(month,placeholder) {
+    var months = {
+      "1":'Ionawr',
+      "01":'Ionawr',
+      "2":'Chwefror',
+      "02":'Chwefror',
+      "3":'Mawrth',
+      "03":'Mawrth',
+      "4":'Ebrill',
+      "04":'Ebrill',
+      "5":'Mai',
+      "05":'Mai',
+      "6":'Mehefin',
+      "06":'Mehefin',
+      "7":'Gorffennaf',
+      "07":'Gorffennaf',
+      "8":'Awst',
+      "08":'Awst',
+      "9":'Medi',
+      "09":'Medi',
+      "10":'Hydref',
+      "11":'Tachwedd',
+      "12":'Rhagfyr'
+    }
+
+    if (month) {
+
+      month.toString()
+      return months[month]
+
+    } else if (placeholder) {
+      return placeholder
+    } else {
+      return
+    }
+
+  }
+
   return filters
 }

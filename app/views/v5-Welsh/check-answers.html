@@ -1,7 +1,7 @@
 {% extends 'layout-Welsh.html' %}
 
 {% set version = "v5-Welsh" %}
-{% set heading = "Check your answers before sending your permission" %}
+{% set heading = "Gwiriwch eich atebion cyn anfon eich caniatâd" %}
 
 {% block beforeMain %}
 {% endblock %}
@@ -12,53 +12,53 @@
 
       <h1>{{ heading }}</h1>
 
-      <h2>Personal details</h2>
+      <h2>Manylion personol</h2>
 
       <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-7">
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-              Name
+            Enw
           </dt>
           <dd class="nhsuk-summary-list__value">
             {{ data['first-name'] }} {{ data['last-name'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/name">
-              Change <span class="nhsuk-u-visually-hidden">Name</span>
+              Newid <span class="nhsuk-u-visually-hidden">enw</span>
             </a>
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-              Date of birth
+            Dyddiad geni
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {{ data['dob-diwrnod'] }} {{ data['dob-mis'] | monthToWord }} {{ data['dob-blwyddyn'] }}
+            {{ data['dob-diwrnod'] }} {{ data['dob-mis'] | monthToWordWelsh }} {{ data['dob-blwyddyn'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/dob">
-              Change <span class="nhsuk-u-visually-hidden">Date of birth</span>
+              Newid <span class="nhsuk-u-visually-hidden">dyddiad geni</span>
             </a>
           </dd>
         </div>
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Postcode
+            Cod post
           </dt>
           <dd class="nhsuk-summary-list__value">
             {{ data['postcode'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/postcode">
-              Change <span class="nhsuk-u-visually-hidden">Postcode</span>
+              Newid <span class="nhsuk-u-visually-hidden">cod post</span>
             </a>
           </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Email address
+          Cyfeiriad ebost
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['email'] }}
@@ -87,14 +87,14 @@
         
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Sex registered at birth
+          Rhyw wedi'i gofrestru adeg genedigaeth
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['sex'] }}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a class="nhsuk-link" href="/{{ version }}/your-sex">
-            Change <span class="nhsuk-u-visually-hidden">Sex registered at birth</span>
+            Newid <span class="nhsuk-u-visually-hidden">rhyw a gofrestrwyd adeg genedigaeth</span>
           </a>
         </dd>
       </div>
@@ -102,7 +102,7 @@
       
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Gender
+          Rhywedd
         </dt>
         <dd class="nhsuk-summary-list__value">
           {% if (data['gender-other']) %}
@@ -113,14 +113,14 @@
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a class="nhsuk-link" href="/{{ version }}/your-gender">
-            Change <span class="nhsuk-u-visually-hidden">Gender</span>
+            Newid <span class="nhsuk-u-visually-hidden">rhywedd</span>
           </a>
         </dd>
       </div>
       
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-              Ethnic group
+            Grŵp ethnig
           </dt>
           <dd class="nhsuk-summary-list__value">
             {% if (data['ethnicity-other']) %}
@@ -131,21 +131,21 @@
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/ethnic-group">
-              Change <span class="nhsuk-u-visually-hidden">Ethnic group</span>
+              Newid <span class="nhsuk-u-visually-hidden">grŵp ethnig</span>
             </a>
           </dd>
         </div>
         
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Contact with people at work
+            Cyswllt â phobl yn y gwaith
           </dt>
           <dd class="nhsuk-summary-list__value">
             {{ data['work'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/work">
-              Change <span class="nhsuk-u-visually-hidden">Contact with people at work</span>
+              Newid <span class="nhsuk-u-visually-hidden">cyswllt â phobl yn y gwaith</span>
             </a>
           </dd>
         </div>
@@ -153,14 +153,14 @@
         {% if (data['work'] == "Yes, the work I'm doing at the moment means I have face to face contact with different people every day") %}
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Work in health or social care
+            Gweithio ym maes iechyd a gofal cymdeithasol
           </dt>
           <dd class="nhsuk-summary-list__value">
             {{ data['health-social-care'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/health-social-care">
-              Change <span class="nhsuk-u-visually-hidden">Work in health or social care</span>
+              Newid <span class="nhsuk-u-visually-hidden">gweithio ym maes iechyd a gofal cymdeithasol</span>
             </a>
           </dd>
         </div>
@@ -172,14 +172,14 @@
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Had a coronavirus test
+            Wedi cael prawf coronafeirws
           </dt>
           <dd class="nhsuk-summary-list__value">
             {{ data['tested'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/tested">
-              Change <span class="nhsuk-u-visually-hidden">Had a coronavirus test</span>
+              Newid <span class="nhsuk-u-visually-hidden">wedi cael prawf coronafeirws</span>
             </a>
           </dd>
       </div>
@@ -187,33 +187,33 @@
       {% if (data['tested'] !== "No") %}
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Test results
+            Canlyniadau profion
           </dt>
           <dd class="nhsuk-summary-list__value">
             {{ data['test-results'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/test-results">
-              Change <span class="nhsuk-u-visually-hidden">Test results</span>
+              Newid <span class="nhsuk-u-visually-hidden">canlyniadau profion</span>
             </a>
           </dd>
         </div>
       {% endif %}
       </dl>
-      <h2>Health</h2>
+      <h2>Iechyd</h2>
       <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-7">
 
       {% if (data['sex'] == "Female") %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Pregnant, breastfeeding or planning pregnancy
+          Beichiogrwydd, bwydo ar y fron neu gynllunio beichiogrwydd
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['areyoupregnant'] }}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a class="nhsuk-link" href="/{{ version }}/are-you-pregnant">
-            Change <span class="nhsuk-u-visually-hidden">Pregnant, breastfeeding or planning pregnancy</span>
+            Newid <span class="nhsuk-u-visually-hidden">beichiogrwydd, bwydo ar y fron neu gynllunio beichiogrwydd</span>
           </a>
         </dd>
       </div>
@@ -223,14 +223,14 @@
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Offered a free flu jab
+          Cael cynnig pigiad ffliw am ddim
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['flujab'] }}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a class="nhsuk-link" href="/{{ version }}/flu-jab">
-            Change <span class="nhsuk-u-visually-hidden">Offered a free flu jab</span>
+            Newid <span class="nhsuk-u-visually-hidden">cael cynnig pigiad ffliw am ddim</span>
           </a>
         </dd>
       </div>
@@ -244,168 +244,168 @@
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a class="nhsuk-link" href="/{{ version }}/diabetes">
-            Change <span class="nhsuk-u-visually-hidden">Diabetes</span>
+            Newid <span class="nhsuk-u-visually-hidden">diabetes</span>
           </a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Asthma that is difficult to control
+          Asthma sy’n anodd i’w reoli
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['asthma'] }}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a class="nhsuk-link" href="/{{ version }}/asthma">
-            Change <span class="nhsuk-u-visually-hidden">Asthma that is difficult to control</span>
+            Newid <span class="nhsuk-u-visually-hidden">asthma sy’n anodd i’w reoli</span>
           </a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Lung condition
+          Cyflwr yr ysgyfaint
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['lung-disease'] }}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a class="nhsuk-link" href="/{{ version }}/lung-disease">
-            Change <span class="nhsuk-u-visually-hidden">Lung condition</span>
+            Newid <span class="nhsuk-u-visually-hidden">cyflwr yr ysgyfaint</span>
           </a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Liver condition
+          Cyflwr yr afu
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['liver-disease'] }}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a class="nhsuk-link" href="/{{ version }}/liver-disease">
-            Change <span class="nhsuk-u-visually-hidden">Liver condition</span>
+            Newid <span class="nhsuk-u-visually-hidden">cyflwr yr afu</span>
           </a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Heart condition
+          Cyflwr y galon
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['cardiac-disease'] }}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a class="nhsuk-link" href="/{{ version }}/cardiac-disease">
-            Change <span class="nhsuk-u-visually-hidden">Heart condition</span>
+            Newid <span class="nhsuk-u-visually-hidden">cyflwr y galon</span>
           </a>
         </dd>
       </div>
       
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Currently having treatment for cancer
+          Yn cael triniaeth ar gyfer canser ar hyn o bryd
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['cancer'] }}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a class="nhsuk-link" href="/{{ version }}/cancer">
-            Change <span class="nhsuk-u-visually-hidden">Currently having treatment for cancer</span>
+            Newid <span class="nhsuk-u-visually-hidden">yn cael triniaeth ar gyfer canser ar hyn o bryd</span>
           </a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Bleeding disorder
+          Anhwylder gwaedu
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['bleeding-disorder'] }}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a class="nhsuk-link" href="/{{ version }}/bleeding-disorder">
-            Change <span class="nhsuk-u-visually-hidden">Bleeding disorder</span>
+            Newid <span class="nhsuk-u-visually-hidden">anhwylder gwaedu</span>
           </a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Getting an infection might be very serious
+          Gallai cael haint fod yn ddifrifol iawn
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['immune-system'] }}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a class="nhsuk-link" href="/{{ version }}/immune-system">
-            Change <span class="nhsuk-u-visually-hidden">Getting an infection might be very serious</span>
+            Newid <span class="nhsuk-u-visually-hidden">gallai cael haint fod yn ddifrifol iawn</span>
           </a>
         </dd>
       </div>
 
       </dl>
   
-      <h2>Permission and contact</h2>
+      <h2>Caniatâd a chyswllt</h2>
       <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-7">
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Permission for researchers to contact me about taking part in health research to find a vaccine for coronavirus
+            Caniatâd i ymchwilwyr gysylltu â mi ynglŷn â chymryd rhan mewn ymchwil iechyd i ddod o hyd i frechlyn ar gyfer coronafeirws
           </dt>
           <dd class="nhsuk-summary-list__value">
             {{ data['give-permission'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/permission">
-              Change <span class="nhsuk-u-visually-hidden">Permission for researchers to contact me about taking part in health research to find a vaccine for coronavirus</span>
+              Newid <span class="nhsuk-u-visually-hidden">caniatâd i ymchwilwyr gysylltu â mi ynglŷn â chymryd rhan mewn ymchwil iechyd i ddod o hyd i frechlyn ar gyfer coronafeirws</span>
             </a>
           </dd>
         </div>
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Contact from NHS Digital about how the coronavirus vaccine studies are going
+            Cyswllt gan NHS Digital ynglŷn â sut mae'r astudiaethau brechlyn coronafeirws yn mynd
           </dt>
           <dd class="nhsuk-summary-list__value">
             {{ data['hear-from-nhsd-covid'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/hear-from-nhsd">
-              Change <span class="nhsuk-u-visually-hidden">Contact from NHS Digital about how the coronavirus vaccine studies are going</span>
+              Newid <span class="nhsuk-u-visually-hidden">cyswllt gan NHS Digital ynglŷn â sut mae'r astudiaethau brechlyn coronafeirws yn mynd</span>
             </a>
           </dd>
         </div>
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Developments to this service, including the chance to take part in other types of health research
+            Datblygiadau i'r gwasanaeth hwn, gan gynnwys y cyfle i gymryd rhan mewn mathau eraill o ymchwil iechyd
           </dt>
           <dd class="nhsuk-summary-list__value">
             {{ data['hear-from-nhsd-this-service'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/hear-from-nhsd">
-              Change <span class="nhsuk-u-visually-hidden">Developments to this service, including the chance to take part in other types of health research</span>
+              Newid <span class="nhsuk-u-visually-hidden">datblygiadau i'r gwasanaeth hwn, gan gynnwys y cyfle i gymryd rhan mewn mathau eraill o ymchwil iechyd</span>
             </a>
           </dd>
         </div>
 
       </dl>
 
-      <h2>Send your answers and permission</h2>
+      <h2>Anfonwch eich atebion a'ch caniatâd</h2>
 
-      <p>By sending this information you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <p>Trwy anfon y wybodaeth hon rydych yn cadarnhau, hyd eithaf eich gwybodaeth, bod y manylion rydych chi'n eu darparu yn gywir.</p>
 
       <form action="/{{ version }}/confirmation" method="post" class="form">
 
         <input type="hidden" name="answers-checked" value="true">
 
         <button class="nhsuk-button" data-module="nhsuk-button">
-          Send
+          Anfon
         </button>
 
       </form>
