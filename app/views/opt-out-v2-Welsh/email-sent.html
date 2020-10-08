@@ -1,0 +1,33 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "opt-out-v2-Welsh" %}
+{% set heading = "Gwiriwch eich e-bost" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ heading }}</h1>
+
+      <p>Rydym wedi anfon e-bost atoch i <strong>{{ data['opt-out-email'] }}</strong></p> 
+      <p>Cliciwch y ddolen yn yr e-bost i gadarnhau eich cyfeiriad e-bost.</p>
+      <p>Ar ôl 72 awr ni fydd y ddolen yn gweithio.</p>
+      <p>Y cyfeiriad e-bost y daw ohono yw <strong>contact-for.research@nhs.net</strong></p>
+      
+      <div class="nhsuk-inset-text nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5">
+        <p>Ni allwch dynnu'ch caniatâd yn ôl nes i chi gadarnhau eich cyfeiriad e-bost.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-s nhsuk-u-padding-top-2">Os na chewch e-bost</h2>
+      <p>Caniatewch ychydig funudau i'r e-bost gyrraedd. Os na chewch e-bost, gwiriwch eich ffolder sbam neu sothach.</p>
+      <p>Gallwch <a href='/{{ version }}/'>ail-gofnodi'ch cyfeiriad e-bost</a> er mwyn i ni anfon e-bost cadarnhau arall atoch.</p>
+
+      <p class="nhsuk-body-s nhsuk-u-margin-top-9"><a href="/emails-v3-Welsh/confirm-email-opt-out">Next step (prototype only)</a></p>
+
+    </div>
+  </div>
+{% endblock %}

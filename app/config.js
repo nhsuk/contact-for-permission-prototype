@@ -4,6 +4,9 @@ module.exports = {
   // Service name
   serviceName: 'Sign up to be contacted for coronavirus vaccine studies',
 
+  // Welsh Service name
+  welshServiceName: 'Cofrestrwch i ni gysylltu â chi ar gyfer astudiaethau brechlyn coronafeirws',
+
   // Port to run nodemon on locally
   port: 2000,
 

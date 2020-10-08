@@ -1,0 +1,22 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "opt-out-v2-Welsh" %}
+{% set heading = "Ni ddefnyddiwyd y cyfeiriad e-bost i gofrestru" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-l">{{ heading }}</h1>
+
+      <p>Ni ddefnyddiwyd y cyfeiriad e-bost <strong>joe.bloggs@nhs.net</strong> i gofrestru i ni gysylltu â chi ar gyfer astudiaethau brechlyn coronafeirws.</p> 
+
+      <p>Gallwch <a href='/{{ version }}/'>nodi'ch cyfeiriad e-bost eto</a> os rydym wedi ei gael yn anghywir.</p>
+
+    </div>
+  </div>
+{% endblock %}

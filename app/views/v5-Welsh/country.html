@@ -1,0 +1,69 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = "18-or-over" %}
+{% set heading = "Lle rydych chi’n byw?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/email-interruption" method="post" class="form">
+
+        {{ radios({
+          "idPrefix": "country",
+          "name": "country",
+          "fieldset": {
+            "legend": {
+              "text": heading,
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "Lloegr",
+              "text": "Lloegr",
+              "name": "Lloegr",
+              "checked": checked("country", "Lloegr")
+            },
+            {
+              "value": "Yr Alban",
+              "text": "Yr Alban",
+              "name": "Yr Alban",
+              "checked": checked("country", "Yr Alban")
+            },
+            {
+              "value": "Cymru",
+              "text": "Cymru",
+              "name": "Cymru",
+              "checked": checked("country", "Cymru")
+            },
+            {
+              "value": "Gogledd Iwerddon",
+              "text": "Gogledd Iwerddon",
+              "name": "Gogledd Iwerddon",
+              "checked": checked("country", "Gogledd Iwerddon")
+            },
+            {
+              divider: "Neu"
+            },
+            {
+              "value": "‘Run o’r rhain",
+              "text": "‘Run o’r rhain",
+              "name": "‘Run o’r rhain",
+              "checked": checked("country", "‘Run o’r rhain")
+            }
+          ]
+        }) }}
+        
+        {{ button({
+          "text": "Parhewch"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

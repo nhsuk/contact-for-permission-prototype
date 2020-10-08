@@ -1,0 +1,60 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = "bleeding-disorder" %}
+{% set heading = "A yw meddyg wedi dweud wrthych y gallai cael haint fod yn ddifrifol iawn?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/permission-interruption" method="post" class="form">
+
+        {{ radios({
+          "idPrefix": "immune-system",
+          "name": "immune-system",
+          "fieldset": {
+            "legend": {
+              "text": heading,
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "hint": {
+            "text": "Mae hyn yn golygu bod gennych gyflwr sy'n gwanhau'ch system imiwnedd. Rhai enghreifftiau yw eich bod wedi cael trawsblaniad organ, wedi cael HIV/AIDS neu gael tynnu eich dueg"
+          },
+          "items": [
+            {
+              "value": "Ydyw",
+              "text": "Ydyw",
+              "name": "Ydyw",
+              "checked": checked("immune-system", "Ydyw")
+            },
+            {
+              "value": "Nac ydyw",
+              "text": "Nac ydyw",
+              "name": "Nac ydyw",
+              "checked": checked("immune-system", "Nac ydyw")
+            },
+            {
+              divider: "neu"
+            },
+            {
+              "value": "Dwi ddim yn siŵr",
+              "text": "Dwi ddim yn siŵr",
+              "name": "Dwi ddim yn siŵr",
+              "checked": checked("immune-system", "Dwi ddim yn siŵr")
+            }
+          ]
+        }) }}
+
+      {{ button({
+        "text": "Parhewch"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% if (data['sex'] == "Benyw") %}
+  {% set backLink = "are-you-pregnant" %}
+{% else %}
+  {% set backLink = "health-questions-interruption" %}
+{% endif %}
+{% set heading = "A ydych chi'n cael cynnig pigiad ffliw tymhorol am ddim?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/diabetes" method="post" class="form">
+
+        {{ radios({
+        "idPrefix": "flujab",
+        "name": "flujab",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "hint": {
+          "text": "Gallai hyn fod oherwydd eich oedran, eich swydd neu gyflwr iechyd. Os ydych chi'n gofyn am bigiad ffliw, dewiswch Na"
+        },
+        "items": [
+          {
+            "value": "Ydw",
+            "text": "Ydw",
+            "name": "Ydw",
+            "checked": checked("flujab", "Ydw")
+          },
+          {
+            "value": "Nac ydw",
+            "text": "Nac ydw",
+            "name": "Nac ydw",
+            "checked": checked("flujab", "Nac ydw")
+          },
+          {
+            divider: "neu"
+          },
+          {
+            "value": "Dwi ddim yn siŵr",
+            "text": "Dwi ddim yn siŵr",
+            "name": "Dwi ddim yn siŵr",
+            "checked": checked("flujab", "Dwi ddim yn siŵr")
+          }
+        ]
+      }) }}
+        
+        {{ button({
+          "text": "Parhewch"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

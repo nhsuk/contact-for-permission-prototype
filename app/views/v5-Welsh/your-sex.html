@@ -1,0 +1,59 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set heading = "Pa ryw oeddech chi wedi'ch cofrestru adeg eich genedigaeth?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+{% set backLink = "phone-number" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/your-gender" method="post" class="form">
+
+      {{ radios({
+        "idPrefix": "sex",
+        "name": "sex",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "items": [
+          {
+            "value": "Benyw",
+            "text": "Benyw",
+            "name": "Benyw",
+            "checked": checked("sex", "Benyw")
+          },
+          {
+            "value": "Gwryw",
+            "text": "Gwryw",
+            "name": "Gwryw",
+            "checked": checked("sex", "Gwryw")
+          }
+        ]
+      }) }}
+
+      {{ details({
+        "text": "Pam yr ydym yn gofyn y cwestiwn hwn",
+        "HTML": "
+          <p>Rydym yn gofyn hyn oherwydd rydym yn gwybod bod coronafeirws yn effeithio ar fenywod a dynion yn wahanol.</p>
+          <p>Gall gwybod eich rhyw helpu i sicrhau ein bod yn cael y gymysgedd iawn o fenywod a dynion i gymryd rhan mewn astudiaethau brechlyn.</p>
+          <p>Mae hyn er mwyn i ni sicrhau y bydd unrhyw frechlynnau a ddatblygir yn gweithio i bawb.</p>
+        "
+      }) }}
+
+        <p>Mae'r cwestiwn nesaf yn gofyn am eich rhywedd.</p>
+
+      {{ button({
+        "text": "Parhewch"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

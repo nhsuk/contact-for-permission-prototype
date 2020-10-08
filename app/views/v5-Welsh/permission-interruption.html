@@ -1,0 +1,26 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = "immune-system" %}
+{% set heading = "Byddwn nawr yn gofyn am ganiatâd i ni gysylltu â chi" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-card nhsuk-card--blue nhsuk-u-padding-1">
+        <div class="nhsuk-card__content">
+          <h1 class="nhsuk-card__heading nhsuk-u-margin-bottom-5">{{ heading }}</h1>
+          <p>Nid oes rhaid i chi roi eich caniatâd os nad ydych chi eisiau gwneud hynny.</p>
+          <p>Gallwch dynnu'ch caniatâd yn ôl ar unrhyw adeg.</p>
+          <form action="permission" method="post">
+            <input type="submit" class="nhsuk-button nhsuk-button--reverse nhsuk-u-margin-bottom-4" value="Parhewch">
+          </form>
+          <p>Bydd NHS Digital yn cadw'ch atebion yn ddiogel. <a href="/privacy" target="_blank" rel="noopener noreferrer">Darganfyddwch yn y polisi preifatrwydd sut y bydd eich data yn cael ei brosesu gan ddefnyddio'r gwasanaeth hwn<span class="nhsuk-u-visually-hidden"> - Tudalen yn agor mewn ffenestr newydd</span></a> (yn agor mewn ffenestr newydd).</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

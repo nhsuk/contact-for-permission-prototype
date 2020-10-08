@@ -1,0 +1,82 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = "your-sex" %}
+{% set heading = "A yw'ch rhywedd yr un fath â'r rhywedd y cawsoch eich cofrestru adeg eich genedigaeth?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+      <form action="/{{ version }}/ethnic-group" method="post" class="form">
+
+        {% set genderOtherHtml %}
+        {{ input({
+          id: "gender-other",
+          name: "gender-other",
+          classes: "nhsuk-u-width-two-thirds",
+          value: data['gender-other'],
+          label: {
+            text: "Eich rhywedd (opsiynol)"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ radios({
+        "idPrefix": "gender",
+        "name": "gender",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "items": [
+          {
+            "value": "Yr un fath â’r rhyw a gofrestrwyd adeg genedigaeth",
+            "text": "Ydyw",
+            "name": "Ydyw",
+            "checked": checked("gender", "Yr un fath â’r rhyw a gofrestrwyd adeg genedigaeth")
+          },
+          {
+            "value": "Ddim yr un peth â’r rhyw a gofrestrwyd adeg genedigaeth",
+            "text": "Nac ydyw",
+            "name": "Nac ydyw",
+            "checked": checked("gender", "Your gender"),
+            conditional: {
+              html: genderOtherHtml
+            }
+          },
+          {
+            divider: "Neu"
+          },
+          {
+            "value": "Mae'n well gen i beidio â dweud",
+            "text": "Mae'n well gen i beidio â dweud",
+            "name": "Mae'n well gen i beidio â dweud",
+            "checked": checked("gender", "Mae'n well gen i beidio â dweud")
+          }
+        ]
+      }) }}
+
+      {{ details({
+        "text": "Pam yr ydym yn gofyn y cwestiwn hwn",
+        "HTML": "
+          <p>Rydym yn gofyn hyn fel y gallwn sicrhau bod cymysgedd o wahanol bobl yn cymryd rhan mewn astudiaethau brechlyn.</p>
+          <p>Mae hyn er mwyn i ni sicrhau bod unrhyw frechlynnau a ddatblygir yn gweithio i bawb.</p>
+          <p>Rydym hefyd eisiau sicrhau bod pawb 18 oed a hŷn yn y DU yn teimlo y gallant gymryd rhan mewn astudiaethau brechlyn os dymunant.</p>
+          <p>Os gwelwn nad yw pobl sydd â rhywedd gwahanol i'r rhyw y cawsant eu cofrestru adeg eu genedigaeth yn cofrestru i ni gysylltu â nhw ynghylch astudiaethau brechlyn, gallwn edrych ar sut i wella hyn.</p>
+        "
+      }) }}
+
+      {{ button({
+        "text": "Parhewch"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = "permission" %}
+{% set heading = "Cymryd rhan mewn ymchwil iechyd arall" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ heading }}</h1>
+      <p>digwydd yn y DU ynghylch coronafeirws a chyflyrau iechyd eraill. Nod yr ymchwil hon yw dod o hyd i'r meddyginiaethau a'r triniaethau mwyaf effeithiol.</p>
+
+      <div class="nhsuk-inset-text nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5">
+        <p>I gael mwy o wybodaeth am fathau eraill o ymchwil iechyd gweler <a href="https://www.bepartofresearch.nihr.ac.uk/" target="_blank" rel="noopener noreferrer">Bod yn Rhan o Ymchwil<span class="nhsuk-u-visually-hidden"> - Tudalen yn agor mewn ffenestr newydd</span></a><span aria-hidden="true"> (yn agor mewn ffenestr newydd)</span> a ddarperir gan y Sefydliad Cenedlaethol ar gyfer Ymchwil Iechyd, partner ymchwil y GIG, iechyd y cyhoedd a gofal cymdeithasol.</p>
+      </div>
+
+      <p>Hoffai NHS Digital ddweud wrthych am sut mae'r astudiaethau brechlyn coronafeirws yn mynd. Rydym yn bwriadu datblygu'r gwasanaeth hwn, gan gynnwys cynnig cyfle i gymryd rhan mewn mathau eraill o ymchwil iechyd.</p>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Pwy yw NHS Digital?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Mae NHS Digital yn rhan o'r GIG ac mae'n casglu, dadansoddi a rhannu gwybodaeth yn ddiogel i wella gwasanaethau iechyd a gofal cymdeithasol.</p>
+          <p>Mae hyn yn cynnwys gweithio gyda'r Sefydliad Cenedlaethol ar gyfer Ymchwil Iechyd ac ymchwilwyr i gasglu a rhannu data i gefnogi ymchwil iechyd i coronafeirws a chyflyrau iechyd eraill.</p>            
+        </div>
+      </details>
+
+      <h2 class="nhsuk-u-margin-bottom-5">A ydych chi'n rhoi caniatâd i NHS Digital anfon e-bost atoch ynglŷn â:</h2>
+      <form action="/{{ version }}/check-answers" method="post" class="form">
+      
+        {{ radios({
+          "idPrefix": "hear-from-nhsd-covid",
+          "name": "hear-from-nhsd-covid",
+          "fieldset": {
+            "legend": {
+              "text": "Sut mae'r astudiaethau brechlyn coronafeirws yn mynd?",
+              "classes": "nhsuk-u-margin-bottom-4"
+            }
+          },
+          "items": [
+            {
+              "value": "Ydw",
+              "text": "Ydw",
+              "name": "Ydw",
+              "checked": checked("hear-from-nhsd-covid", "Ydw")
+            },
+            {
+              "value": "Nac ydw",
+              "text": "Nac ydw",
+              "name": "Nac ydw",
+              "checked": checked("hear-from-nhsd-covid", "Nac ydw")
+            }
+          ]
+        }) }}
+
+        {{ radios({
+          "idPrefix": "hear-from-nhsd-this-service",
+          "name": "hear-from-nhsd-this-service",
+          "fieldset": {
+            "legend": {
+              "text": "Datblygiadau i'r gwasanaeth hwn, gan gynnwys y cyfle i gymryd rhan mewn mathau eraill o ymchwil iechyd?",
+              "classes": "nhsuk-u-margin-bottom-4"
+            }
+          },
+          "items": [
+            {
+              "value": "Ydw",
+              "text": "Ydw",
+              "name": "Ydw",
+              "checked": checked("hear-from-nhsd-this-service", "Ydw")
+            },
+            {
+              "value": "Nac ydw",
+              "text": "Nac ydw",
+              "name": "Nac ydw",
+              "checked": checked("hear-from-nhsd-this-service", "Nac ydw")
+            }
+          ]
+        }) }}
+        
+        {{ button({
+          "text": "Parhewch"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

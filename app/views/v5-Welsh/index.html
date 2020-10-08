@@ -1,0 +1,48 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set heading = "Cofrestrwch i ni gysylltu â chi ar gyfer astudiaethau brechlyn coronafeirws" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>{{ heading }}</h1>
+
+      <p>Defnyddiwch y gwasanaeth hwn i roi caniatâd i ymchwilwyr gysylltu â chi ynglŷn â chymryd rhan mewn astudiaethau brechlyn coronavirus (COVID-19) yn y DU.</p>
+
+      <p>Mae'r gwasanaeth hwn hefyd ar gael <a href="/v5">yn Saesneg (English)</a>.</p>
+
+      {{ insetText({
+        "HTML": "<p>Nid ydych yn cofrestru i gymryd rhan mewn astudiaeth iechyd benodol pan ddefnyddiwch y gwasanaeth hwn. </p> 
+        <p>Rydych chi'n gadael i ymchwilwyr wybod eich bod chi'n hapus iddynt gysylltu â chi, os ydynt yn meddwl y gallech fod yn addas i gymryd rhan yn eu hastudiaethau.</p>",
+        "classes": "nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5"
+      }) }}
+
+      <h2 class="nhsuk-heading-m">Cyn i chi ddechrau</h2>
+      <p>Gallwch ddefnyddio’r gwasanaeth hwn i gofrestru os:</p>
+      <ul>
+        <li>oes gennych gyfeiriad e-bost</li>
+        <li>eich bod yn 18 neu hŷn</li>
+        <li>eich bod yn byw yn y DU</li>
+      </ul>
+
+      <p>Mae cofrestru yn cymryd oddeutu 5 munud.</p>
+
+      <a href="/{{ version }}/18-or-over" class="nhsuk-button nhsuk-u-margin-bottom-7 nhsuk-u-margin-top-3">
+        Dechreuwch nawr
+      </a>
+
+      <h2 class="nhsuk-heading-m">Tynnu eich caniatâd yn ôl</h2>
+      <p>Os ydych chi eisoes wedi cofrestru ar gyfer y gwasanaeth hwn, gallwch dynnu'ch <a href="/opt-out-v2-Welsh">caniatâd yn ôl ar unrhyw adeg</a>.</p>
+
+      <div class="nhsuk-inset-text nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5">
+        <p>Darganfyddwch yn y polisi <a href="/privacy">preifatrwydd sut y bydd eich data yn cael ei brosesu gan ddefnyddio'r gwasanaeth hwn</a>.</p>
+      </div>
+      
+    </div>
+  </div>
+{% endblock %}

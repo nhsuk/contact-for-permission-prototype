@@ -1,0 +1,56 @@
+{% extends 'layout-Welsh.html' %}
+{% set version = "v5-Welsh" %}
+{% set backLink = "cardiac-disease" %}
+{% set heading = "A ydych yn cael triniaeth am ganser ar hyn o bryd?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/bleeding-disorder" method="post" class="form">
+
+        {{ radios({
+          "idPrefix": "cancer",
+          "name": "cancer",
+          "fieldset": {
+            "legend": {
+              "text": heading,
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "Ydw",
+              "text": "Ydw",
+              "name": "Ydw",
+              "checked": checked("cancer", "Ydw")
+            },
+            {
+              "value": "Nac ydw",
+              "text": "Nac ydw",
+              "name": "Nac ydw",
+              "checked": checked("cancer", "Nac ydw")
+            },
+            {
+              divider: "neu"
+            },
+            {
+              "value": "Dwi ddim yn siŵr",
+              "text": "Dwi ddim yn siŵr",
+              "name": "Dwi ddim yn siŵr",
+              "checked": checked("cancer", "Dwi ddim yn siŵr")
+            }
+          ]
+        }) }}
+
+      {{ button({
+        "text": "Parhewch"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = "ethnic-group" %}
+{% set heading = "Ar hyn o bryd, a oes gennych gyswllt wyneb yn wyneb â gwahanol bobl y rhan fwyaf o ddiwrnodau oherwydd eich gwaith neu unrhyw wirfoddoli a wnewch?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/health-social-care" method="post" class="form">
+
+        {{ radios({
+          idPrefix: "work",
+          name: "work",
+          fieldset: {
+            legend: {
+              text: heading,
+              isPageHeading: true,
+              classes: "nhsuk-fieldset__legend--l"
+            }
+          },
+          "hint": {
+            "text": "Rhai enghreifftiau o hyn yw nyrs, meddyg, athro, gweithiwr gofal, gweithiwr swyddfa, gweithiwr trafnidiaeth, gweithiwr siop, gyrrwr tacsi, gweithiwr dosbarthu, heddwas, gweithiwr ffatri fwyd"
+          },
+          items: [
+            {
+              value: "Ydyw, mae'r gwaith rydw i'n ei wneud ar hyn o bryd yn golygu bod gen i gyswllt wyneb yn wyneb â gwahanol bobl bron bob dydd",
+              text: "Oes",
+              checked: checked("work", "Ydyw, mae'r gwaith rydw i'n ei wneud ar hyn o bryd yn golygu bod gen i gyswllt wyneb yn wyneb â gwahanol bobl bron bob dydd")
+            },
+            {
+              value: "Na, nid yw’r gwaith rydw i'n ei wneud ar hyn o bryd yn golygu bod gen i gyswllt wyneb yn wyneb â gwahanol bobl bron bob dydd",
+              text: "Nac oes",
+              checked: checked("work", "Na, nid yw’r gwaith rydw i'n ei wneud ar hyn o bryd yn golygu bod gen i gyswllt wyneb yn wyneb â gwahanol bobl bron bob dydd")
+            },
+            {
+              divider: "neu"
+            },
+            {
+              value: "Nid wyf yn gweithio ar hyn o bryd",
+              text: "Nid wyf yn gweithio ar hyn o bryd",
+              checked: checked("work", "Nid wyf yn gweithio ar hyn o bryd"),
+              label: {
+                classes: 'nhsuk-label'
+              }
+            }
+          ]
+        }) }}
+
+        {{ details({
+          "text": "Pam yr ydym yn gofyn y cwestiwn hwn",
+          "HTML": "
+            <p>Rydym yn gofyn hyn oherwydd bod cyswllt wyneb yn wyneb â gwahanol bobl yn ei gwneud hi'n fwy tebygol bod coronafeirws yn cael ei drosglwyddo i eraill.</p>
+            <p>Gall gwybod a ydych chi mewn swydd fel hon helpu ymchwilwyr i'ch paru ag astudiaeth frechlyn berthnasol.</p>
+          "
+        }) }}
+
+        {{ button({
+          "text": "Parhewch"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

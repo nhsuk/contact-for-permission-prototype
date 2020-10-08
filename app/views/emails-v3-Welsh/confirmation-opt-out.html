@@ -1,0 +1,33 @@
+{% extends 'layout-email-Welsh.html' %}
+
+{% set version = "emails-v3-Welsh" %}
+{% set bodyClasses = "app-email-body" %}
+{% set emailFrom = "contact-for-research@nhsdigital.nhs.uk" %}
+{% set emailTo = "joe.bloggs@google.com" %}
+{% set emailSubject = "Cadarnhad neu dynnu eich caniatâd yn ôl i gymryd rhan mewn astudiaethau brechlyn coronafeirws" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+
+  <p>Annwyl Joe Bloggs,</p>
+
+  <p>Rydych wedi tynnu eich caniatâd yn ôl i ni gysylltu â chi ar gyfer astudiaethau brechlyn coronafeirws.</p>
+
+  <p>Tynnwyd eich manylion o'r rhestr gyswllt.</p>
+
+  <hr>
+
+  <h2 class="nhsuk-heading-m">Beth sy'n digwydd nesaf</h2>
+  <p>Ni fydd unrhyw ymchwilwyr yn cysylltu â chi mwyach ynghylch astudiaethau brechlyn coronafeirws yn y dyfodol.</p>
+  <p>Os yw'ch manylion eisoes wedi'u rhannu ag ymchwilwyr, byddwn yn dweud wrthynt am eich tynnu chi oddi ar eu rhestr. Gall hyn gymryd 28 diwrnod. Os bydd ymchwilydd yn cysylltu â chi o fewn yr amser hwn, gallwch ddweud wrthynt eich bod wedi tynnu eich caniatâd yn ôl.</p>
+  <p>Nid yw hyn yn eich tynnu allan o unrhyw dreialon rydych chi'n cymryd rhan ynddynt ar hyn o bryd.</p>
+  <p>Ni fydd NHS Digital bellach yn cysylltu â chi ynghylch unrhyw ymchwil atal a thrin coronafeirws, nac unrhyw ymchwil iechyd arall.</p>
+
+  <hr>
+
+  <h2 class="nhsuk-heading-m">Rhoi eich caniatâd eto</h2>
+  <p>Os ydych chi'n newid eich meddwl, gallwch chi <a href="/v5-Welsh">roi eich caniatâd eto i ni gysylltu â chi i gymryd rhan mewn astudiaethau brechlyn coronafeirws</a>.</p>
+
+{% endblock %}

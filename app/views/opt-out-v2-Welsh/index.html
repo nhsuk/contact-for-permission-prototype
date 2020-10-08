@@ -1,0 +1,37 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "opt-out-v2-Welsh" %}
+{% set heading = "Tynnu eich caniatâd yn ôl i ni gysylltu â chi ar gyfer astudiaethau brechlyn" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/email-loader" method="post" class="form">
+
+       <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-5">{{ heading }}</h1>
+
+        <p>I dynnu'ch caniatâd yn ôl, nodwch y cyfeiriad e-bost a ddefnyddiwyd gennych i gofrestru.</p>
+        <p>Yna byddwn yn anfon e-bost atoch yn gofyn ichi gadarnhau eich cyfeiriad e-bost.</p>
+        <p>Os gwnaethoch gytuno i NHS Digital gysylltu â chi ynghylch ymchwil iechyd arall, bydd hwn hefyd yn cael ei dynnu'n ôl.</p>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="opt-out-email">
+            Cyfeiriad e-bost
+          </label>
+          <input class="nhsuk-input" id="opt-out-email" name="opt-out-email" type="email" autocomplete="email" spellcheck="false">
+        </div>
+
+        {{ button({
+          "text": "Parhewch"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

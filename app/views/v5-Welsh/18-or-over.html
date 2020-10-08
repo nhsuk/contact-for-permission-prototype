@@ -1,0 +1,48 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = " " %}
+{% set heading = "A ydych chi’n 18 oed neu hŷn?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/country" method="post" class="form">
+
+        {{ radios({
+        "idPrefix": "18orover",
+        "name": "18orover",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "items": [
+          {
+            "value": "Ydw",
+            "text": "Ydw",
+            "name": "Ydw",
+            "checked": checked("18orover", "Ydw")
+          },
+          {
+            "value": "Nac ydw",
+            "text": "Nac ydw",
+            "name": "Nac ydw",
+            "checked": checked("18orover", "Nac ydw")
+          }
+        ]
+      }) }}
+        
+        {{ button({
+          "text": "Parhewch"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

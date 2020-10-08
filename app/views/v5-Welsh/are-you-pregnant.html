@@ -1,0 +1,57 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set backLink = "health-questions-interruption" %}
+{% set heading = "Ydych chi'n feichiog, yn bwydo ar y fron neu'n bwriadu beichiogi yn ystod y 6 mis nesaf?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/flu-jab" method="post" class="form">
+
+        {{ radios({
+        "idPrefix": "areyoupregnant",
+        "name": "areyoupregnant",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "items": [
+          {
+            "value": "Ydw",
+            "text": "Ydw",
+            "name": "Ydw",
+            "checked": checked("areyoupregnant", "Ydw")
+          },
+          {
+            "value": "Nac ydw",
+            "text": "Nac ydw",
+            "name": "Nac ydw",
+            "checked": checked("areyoupregnant", "Nac ydw")
+          },
+          {
+            divider: "neu"
+          },
+          {
+            "value": "Dwi ddim yn siŵr",
+            "text": "Dwi ddim yn siŵr",
+            "name": "Dwi ddim yn siŵr",
+            "checked": checked("areyoupregnant", "Dwi ddim yn siŵr")
+          }
+        ]
+      }) }}
+        
+        {{ button({
+          "text": "Parhewch"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

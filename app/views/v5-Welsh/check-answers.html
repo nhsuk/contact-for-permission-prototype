@@ -1,0 +1,415 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v5-Welsh" %}
+{% set heading = "Gwiriwch eich atebion cyn anfon eich caniatâd" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>{{ heading }}</h1>
+
+      <h2>Manylion personol</h2>
+
+      <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-7">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Enw
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['first-name'] }} {{ data['last-name'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/name">
+              Newid <span class="nhsuk-u-visually-hidden">enw</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Dyddiad geni
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['dob-diwrnod'] }} {{ data['dob-mis'] | monthToWordWelsh }} {{ data['dob-blwyddyn'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/dob">
+              Newid <span class="nhsuk-u-visually-hidden">dyddiad geni</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Cod post
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['postcode'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/postcode">
+              Newid <span class="nhsuk-u-visually-hidden">cod post</span>
+            </a>
+          </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Cyfeiriad ebost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['email'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Phone number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if (data['phone-number']) %}
+            {{ data['phone-number'] }}
+          {% else %}
+            Not provided
+          {% endif %}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/phone-number">
+            Change <span class="nhsuk-u-visually-hidden">Phone number</span>
+          </a>
+        </dd>
+      </div>
+        
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Rhyw wedi'i gofrestru adeg genedigaeth
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['sex'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/your-sex">
+            Newid <span class="nhsuk-u-visually-hidden">rhyw a gofrestrwyd adeg genedigaeth</span>
+          </a>
+        </dd>
+      </div>
+
+      
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Rhywedd
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if (data['gender-other']) %}
+            {{ data['gender-other'] }}
+          {% else %}
+            {{ data['gender'] }}
+          {% endif %}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/your-gender">
+            Newid <span class="nhsuk-u-visually-hidden">rhywedd</span>
+          </a>
+        </dd>
+      </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Grŵp ethnig
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if (data['ethnicity-other']) %}
+            {{ data['ethnicity-other'] }}
+            {% else %}
+            {{ data['ethnic-group'] }}
+            {% endif %}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/ethnic-group">
+              Newid <span class="nhsuk-u-visually-hidden">grŵp ethnig</span>
+            </a>
+          </dd>
+        </div>
+        
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Cyswllt â phobl yn y gwaith
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['work'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/work">
+              Newid <span class="nhsuk-u-visually-hidden">cyswllt â phobl yn y gwaith</span>
+            </a>
+          </dd>
+        </div>
+
+        {% if (data['work'] == "Yes, the work I'm doing at the moment means I have face to face contact with different people every day") %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Gweithio ym maes iechyd a gofal cymdeithasol
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['health-social-care'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/health-social-care">
+              Newid <span class="nhsuk-u-visually-hidden">gweithio ym maes iechyd a gofal cymdeithasol</span>
+            </a>
+          </dd>
+        </div>
+        {% else %}
+        
+      {% endif %}
+        
+        
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Wedi cael prawf coronafeirws
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['tested'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/tested">
+              Newid <span class="nhsuk-u-visually-hidden">wedi cael prawf coronafeirws</span>
+            </a>
+          </dd>
+      </div>
+
+      {% if (data['tested'] !== "No") %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Canlyniadau profion
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['test-results'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/test-results">
+              Newid <span class="nhsuk-u-visually-hidden">canlyniadau profion</span>
+            </a>
+          </dd>
+        </div>
+      {% endif %}
+      </dl>
+      <h2>Iechyd</h2>
+      <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-7">
+
+      {% if (data['sex'] == "Benyw") %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Beichiogrwydd, bwydo ar y fron neu gynllunio beichiogrwydd
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['areyoupregnant'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/are-you-pregnant">
+            Newid <span class="nhsuk-u-visually-hidden">beichiogrwydd, bwydo ar y fron neu gynllunio beichiogrwydd</span>
+          </a>
+        </dd>
+      </div>
+        {% else %}
+        
+      {% endif %}
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Cael cynnig pigiad ffliw am ddim
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['flujab'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/flu-jab">
+            Newid <span class="nhsuk-u-visually-hidden">cael cynnig pigiad ffliw am ddim</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Diabetes
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['diabetes'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/diabetes">
+            Newid <span class="nhsuk-u-visually-hidden">diabetes</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Asthma sy’n anodd i’w reoli
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['asthma'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/asthma">
+            Newid <span class="nhsuk-u-visually-hidden">asthma sy’n anodd i’w reoli</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Cyflwr yr ysgyfaint
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['lung-disease'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/lung-disease">
+            Newid <span class="nhsuk-u-visually-hidden">cyflwr yr ysgyfaint</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Cyflwr yr afu
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['liver-disease'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/liver-disease">
+            Newid <span class="nhsuk-u-visually-hidden">cyflwr yr afu</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Cyflwr y galon
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['cardiac-disease'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/cardiac-disease">
+            Newid <span class="nhsuk-u-visually-hidden">cyflwr y galon</span>
+          </a>
+        </dd>
+      </div>
+      
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Yn cael triniaeth ar gyfer canser ar hyn o bryd
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['cancer'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/cancer">
+            Newid <span class="nhsuk-u-visually-hidden">yn cael triniaeth ar gyfer canser ar hyn o bryd</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Anhwylder gwaedu
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['bleeding-disorder'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/bleeding-disorder">
+            Newid <span class="nhsuk-u-visually-hidden">anhwylder gwaedu</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Gallai cael haint fod yn ddifrifol iawn
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['immune-system'] }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="/{{ version }}/immune-system">
+            Newid <span class="nhsuk-u-visually-hidden">gallai cael haint fod yn ddifrifol iawn</span>
+          </a>
+        </dd>
+      </div>
+
+      </dl>
+  
+      <h2>Caniatâd a chyswllt</h2>
+      <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-7">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Caniatâd i ymchwilwyr gysylltu â mi ynglŷn â chymryd rhan mewn ymchwil iechyd i ddod o hyd i frechlyn ar gyfer coronafeirws
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['give-permission'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/permission">
+              Newid <span class="nhsuk-u-visually-hidden">caniatâd i ymchwilwyr gysylltu â mi ynglŷn â chymryd rhan mewn ymchwil iechyd i ddod o hyd i frechlyn ar gyfer coronafeirws</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Cyswllt gan NHS Digital ynglŷn â sut mae'r astudiaethau brechlyn coronafeirws yn mynd
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['hear-from-nhsd-covid'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/hear-from-nhsd">
+              Newid <span class="nhsuk-u-visually-hidden">cyswllt gan NHS Digital ynglŷn â sut mae'r astudiaethau brechlyn coronafeirws yn mynd</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Datblygiadau i'r gwasanaeth hwn, gan gynnwys y cyfle i gymryd rhan mewn mathau eraill o ymchwil iechyd
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['hear-from-nhsd-this-service'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/hear-from-nhsd">
+              Newid <span class="nhsuk-u-visually-hidden">datblygiadau i'r gwasanaeth hwn, gan gynnwys y cyfle i gymryd rhan mewn mathau eraill o ymchwil iechyd</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <h2>Anfonwch eich atebion a'ch caniatâd</h2>
+
+      <p>Trwy anfon y wybodaeth hon rydych yn cadarnhau, hyd eithaf eich gwybodaeth, bod y manylion rydych chi'n eu darparu yn gywir.</p>
+
+      <form action="/{{ version }}/confirmation" method="post" class="form">
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button class="nhsuk-button" data-module="nhsuk-button">
+          Anfon
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
