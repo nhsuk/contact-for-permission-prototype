@@ -110,7 +110,7 @@ router.post('/v5-Welsh/no-permission', function (req, res) {
 
   var install = req.session.data['give-permission']
 
-  if (install == "No, I do not give my permission"){
+  if (install == "Na, nid wyf yn rhoi fy nghaniatâd"){
     res.redirect('/v5-Welsh/no-permission')
   }
   else {
