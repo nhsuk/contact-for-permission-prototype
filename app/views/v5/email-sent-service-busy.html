@@ -18,11 +18,13 @@
       <p>After 72 hours the link will not work.</p>
       <p>The email address it will come from is <strong>contact-for.research@nhs.net</strong></p>
 
+      <p>Check your spam or junk folder if you do not get an email. Allow a few minutes for the email to arrive.</p>
+      
       {% from 'warning-callout/macro.njk' import warningCallout %}
 
     {{ warningCallout({
       "heading": "Important",
-      "HTML": "<p>Lots of people are signing up at the moment. You may need to wait longer than usual for the email. Check your spam or junk folder.</p>"
+      "HTML": "<p>Lots of people are signing up at the moment. You may need to wait longer than usual for the email.</p>"
     }) }}
 
       <p>If the email address above is wrong, you can <a href='/{{ version }}/email'>change your email address</a>.</p>
