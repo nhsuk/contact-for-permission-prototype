@@ -96,7 +96,7 @@ router.post('/v5-Welsh/email-interruption', function (req, res) {
 
   var install = req.session.data['country']
 
-  if (install == "‘Run o’r rhain"){
+  if (install == "‘Dim o’r rhain"){
     res.redirect('/v5-Welsh/outside-uk')
   }
   else {
@@ -110,7 +110,7 @@ router.post('/v5-Welsh/no-permission', function (req, res) {
 
   var install = req.session.data['give-permission']
 
-  if (install == "Na, nid wyf yn rhoi fy nghaniatâd"){
+  if (install == "Na, dydw i ddim yn rhoi fy nghaniatâd"){
     res.redirect('/v5-Welsh/no-permission')
   }
   else {
