@@ -11,11 +11,11 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-u-margin-bottom-5">{{ heading }}</h1>
-      <p>digwydd yn y DU ynghylch coronafeirws a chyflyrau iechyd eraill. Nod yr ymchwil hon yw dod o hyd i'r meddyginiaethau a'r triniaethau mwyaf effeithiol.</p>
+      <p>Mae llawer o ymchwil iechyd yn digwydd yn y DU ynghylch coronafeirws a chyflyrau iechyd eraill. Nod yr ymchwil hon yw dod o hyd i'r meddyginiaethau a'r triniaethau mwyaf effeithiol.</p>
 
-      <div class="nhsuk-inset-text nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5">
-        <p>I gael mwy o wybodaeth am fathau eraill o ymchwil iechyd gweler <a href="https://www.bepartofresearch.nihr.ac.uk/" target="_blank" rel="noopener noreferrer">Bod yn Rhan o Ymchwil<span class="nhsuk-u-visually-hidden"> - Tudalen yn agor mewn ffenestr newydd</span></a><span aria-hidden="true"> (yn agor mewn ffenestr newydd)</span> a ddarperir gan y Sefydliad Cenedlaethol ar gyfer Ymchwil Iechyd, partner ymchwil y GIG, iechyd y cyhoedd a gofal cymdeithasol.</p>
-      </div>
+			<div class="nhsuk-inset-text nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5">
+				<p>I gael mwy o wybodaeth am fathau eraill o ymchwil iechyd gweler <a href="https://www.bepartofresearch.nihr.ac.uk/" target="_blank" rel="noopener noreferrer">Be Part of Research (yn agor mewn ffenestr newydd)</a> a ddarperir gan y Sefydliad Cenedlaethol ar gyfer Ymchwil Iechyd, partner ymchwil y GIG, iechyd y cyhoedd a gofal cymdeithasol.</p>
+			 </div>
 
       <p>Hoffai NHS Digital ddweud wrthych am sut mae'r astudiaethau brechlyn coronafeirws yn mynd. Rydym yn bwriadu datblygu'r gwasanaeth hwn, gan gynnwys cynnig cyfle i gymryd rhan mewn mathau eraill o ymchwil iechyd.</p>
 
@@ -27,13 +27,13 @@
         </summary>
         <div class="nhsuk-details__text">
           <p>Mae NHS Digital yn rhan o'r GIG ac mae'n casglu, dadansoddi a rhannu gwybodaeth yn ddiogel i wella gwasanaethau iechyd a gofal cymdeithasol.</p>
-          <p>Mae hyn yn cynnwys gweithio gyda'r Sefydliad Cenedlaethol ar gyfer Ymchwil Iechyd ac ymchwilwyr i gasglu a rhannu data i gefnogi ymchwil iechyd i coronafeirws a chyflyrau iechyd eraill.</p>            
+          <p>Mae hyn yn cynnwys gweithio gyda'r Sefydliad Cenedlaethol ar gyfer Ymchwil Iechyd ac ymchwilwyr i gasglu a rhannu data i gefnogi ymchwil iechyd i coronafeirws a chyflyrau iechyd eraill.</p>
         </div>
       </details>
 
       <h2 class="nhsuk-u-margin-bottom-5">A ydych chi'n rhoi caniatâd i NHS Digital anfon e-bost atoch ynglŷn â:</h2>
       <form action="/{{ version }}/check-answers" method="post" class="form">
-      
+
         {{ radios({
           "idPrefix": "hear-from-nhsd-covid",
           "name": "hear-from-nhsd-covid",
@@ -83,7 +83,7 @@
             }
           ]
         }) }}
-        
+
         {{ button({
           "text": "Parhewch"
         }) }}
