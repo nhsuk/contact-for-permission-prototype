@@ -96,7 +96,7 @@ router.post('/v5-Welsh/email-interruption', function (req, res) {
 
   var install = req.session.data['country']
 
-  if (install == "‘Dim o’r rhain"){
+  if (install == "Dim o’r rhain"){
     res.redirect('/v5-Welsh/outside-uk')
   }
   else {
