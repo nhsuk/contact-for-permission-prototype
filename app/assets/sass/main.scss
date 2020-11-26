@@ -49,6 +49,35 @@ h1 {
   word-break: break-word;
 }
 
+
+h1a,
+.nhsuk-heading-xl-green {
+  font-size: 32px;
+  font-size: 2rem;
+  color: green;
+  line-height: 1.25;
+  display: block;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 40px; }
+  @media (min-width: 40.0625em) {
+    h1a,
+    .nhsuk-heading-xl-green {
+      font-size: 48px;
+      font-size: 3rem;
+      line-height: 1.16667; } }
+  @media print {
+    h1a,
+    .nhsuk-heading-xl-green {
+      font-size: 32pt;
+      line-height: 1.15; } }
+  @media (min-width: 40.0625em) {
+    h1a,
+    .nhsuk-heading-xl-green {
+      margin-bottom: 48px; } }
+
+
+
 .app-nihr-logo {
   @include nhsuk-responsive-margin(5, "bottom");
   @include nhsuk-responsive-padding(2, "top");

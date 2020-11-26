@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% set version = "v5" %}
+{% set backLink = "ethnic-group" %}
+{% set heading = "Do you have face to face contact with people most days because of your work or any volunteering you do?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/health-social-care" method="post" class="form">
+
+        {{ radios({
+          idPrefix: "work",
+          name: "work",
+          fieldset: {
+            legend: {
+              text: "At the moment, do you have face to face contact with people most days because of your work or any volunteering you do?",
+              isPageHeading: true,
+              classes: "nhsuk-fieldset__legend--l"
+            }
+          },
+          "hint": {
+            "text": "Some examples are nurse, doctor, teacher, care worker, office worker, transport worker, shop worker, taxi driver, delivery worker, police officer, food factory worker"
+          },
+          items: [
+            {
+              value: "Yes, the work I'm doing at the moment means I have face to face contact with different people every day",
+              text: "Yes",
+              checked: checked("work", "Yes, the work I'm doing at the moment means I have face to face contact with different people every day")
+            },
+            {
+              value: "No, the work I'm doing at the moment means I do not have face to face contact with different people every day",
+              text: "No",
+              checked: checked("work", "No, the work I'm doing at the moment means I do not have face to face contact with different people every day")
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "I'm not working at the moment",
+              text: "I'm not working at the moment",
+              checked: checked("work", "I'm not working at the moment"),
+              label: {
+                classes: 'nhsuk-label'
+              }
+            }
+          ]
+        }) }}
+
+        {{ details({
+          "text": "Why we are asking this question",
+          "HTML": "
+            <p>We're asking this because face to face contact with different people makes it more likely that coronavirus is passed on to others.</p>
+            <p>Knowing if you're in a job like this can help researchers match you to a relevant vaccine study.</p>
+          "
+        }) }}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
