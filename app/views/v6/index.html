@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% set version = "v5" %}
+{% set heading = "Sign up to be contacted for coronavirus vaccine studies" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>{{ heading }}</h1>
+
+      <p>Use this service to give permission for researchers to contact you about taking part in coronavirus (COVID-19) vaccine studies in the UK.</p>
+
+      <p>This service is also available in <a href="/v5-Welsh">Welsh (Cymraeg)</a>.</p>
+
+      {{ insetText({
+        "HTML": "<p>You are not signing up to take part in a specific health study when you use this service.</p> 
+        <p>You are letting researchers know you're happy for them to contact you, if they think you might be suitable to take part in their studies.</p>",
+        "classes": "nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5"
+      }) }}
+
+      <h2 class="nhsuk-heading-m">Before you start</h2>
+      <p>You can use this service to sign up if you:</p>
+      <ul>
+        <li>have an email address</li>
+        <li>are 18 or over</li>
+        <li>live in the UK</li>
+      </ul>
+
+      <p>Signing up takes around 5 minutes.</p>
+
+      <a href="/{{ version }}/18-or-over" class="nhsuk-button nhsuk-u-margin-bottom-7 nhsuk-u-margin-top-3">
+        Start now
+      </a>
+
+      <h2 class="nhsuk-heading-m">Withdraw your permission</h2>
+      <p>If you've already signed up for this service, you can <a href="/opt-out-v2">withdraw your permission at any time</a>.</p>
+
+      <div class="nhsuk-inset-text nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5">
+        <p>Find out in the privacy policy <a href="/privacy">how your data will be processed using this service</a>.</p>
+      </div>
+      
+    </div>
+  </div>
+{% endblock %}

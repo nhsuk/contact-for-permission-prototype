@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% set version = "v5" %}
+{% set heading = "Sorry, you cannot sign up" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-l">{{ heading }}</h1>
+      
+      <p>Only people living in the UK can sign up using this service.</p>
+
+    </div>
+  </div>
+{% endblock %}
