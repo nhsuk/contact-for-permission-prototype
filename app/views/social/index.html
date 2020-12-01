@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Social media sharing buttons
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/docs",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>Testing social media button integration</h1>
+
+      <p>PTC 190 - Once a user has completed the sign-up journey they can easily share the link to the service through their social media channels.</p>
+
+      <p><strong>We have 3 options</strong></p>
+
+      <h2>Share buttons</h2>
+
+      <ul>
+        <li><a href="http://localhost:3000/social/normal">Option 1: Normal</a></li>
+        <li><a href="http://localhost:3000/social/inset">Option 2: Inset</a></li>
+        <li><a href="http://localhost:3000/social/separate">Option 3: Separate</a></li>
+      </ul>
+
+    
+
+    </div>
+
+  </div>
+{% endblock %}
