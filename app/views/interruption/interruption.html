@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% set version = "v5" %}
+{% if (data['tested'] == "Yes") %}
+  {% set backLink = "test-results" %}
+{% else %}
+  {% set backLink = "tested" %}
+{% endif %}
+{% set heading = "We'll now ask you questions about your health" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-card nhsuk-card--blue nhsuk-u-padding-1">
+        <div class="nhsuk-card__content">
+          <h1 class="nhsuk-card__heading nhsuk-u-margin-bottom-5">{{ heading }}</h1>
+          <p>We're asking about your health so we:</p>
+          <ul>
+            <li>get the right mix of different people taking part in vaccine studies</li>
+            <li>make sure any vaccines developed will work for everyone</li>
+            <li>check what vaccine studies you might be suitable for</li>
+          </ul>
+
+          <p>We'll ask about things like asthma, cancer treatment and heart conditions.</p>
+
+          <p>Choose the most suitable answer for you. You can discuss your answers with any researchers who contact you.</p>
+
+          <p>Having a health condition does not mean you cannot take part in vaccine studies.</p>
+
+          <form action="are-you-pregnant" method="post">
+            <input type="submit" class="nhsuk-button nhsuk-button--reverse nhsuk-u-margin-bottom-4" value="Continue">
+          </form>
+
+          <p>NHS Digital will keep your answers secure. <a href="/privacy" target="_blank" rel="noopener noreferrer">Find out in the privacy policy how your data will be processed using this service <span class="nhsuk-u-visually-hidden"> - Page opens in new window</span></a><span aria-hidden="true"> (opens in new window)</span>.</p>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
