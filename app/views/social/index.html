@@ -1,4 +1,4 @@
-{% extends 'layout2.html' %}
+{% extends 'layout.html' %}
 
 {% block pageTitle %}
   Social media sharing buttons
@@ -9,6 +9,9 @@
     href: "/docs",
     text: "Home"
   }) }}
+{% endblock %}
+
+{% block beforeMain %}
 {% endblock %}
 
 {% block content %}
@@ -25,13 +28,10 @@
       <h2>Share buttons</h2>
 
       <ul>
-
-        <li><a href="http://localhost:3000/social/normal"><Strong>Option 1: Normal</Strong></a></li>
+        <li><a href="http://localhost:3000/social/normal">Option 1: Normal</a></li>
         <li><a href="http://localhost:3000/social/inset">Option 2: Inset</a></li>
         <li><a href="http://localhost:3000/social/separate">Option 3: Separate</a></li>
       </ul>
-
-    
 
     </div>
 
