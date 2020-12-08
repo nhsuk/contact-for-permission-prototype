@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  No text
+  Inset
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,20 +11,18 @@
   }) }}
 {% endblock %}
 
+{% block beforeMain %}
+{% endblock %}
+
 {% block content %}
   
 <div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
 
-    <div class="nhsuk-grid-column-two-thirds">
-
+<div class="nhsuk-alert nhsuk-alert--success">
         <h1 class="nhsuk-u-margin-bottom-4">Thank you,<br> you&#39;ve signed up to be contacted</h1>
-
-        <p class="nhsuk-body-l">
-        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="none">
-        <path stroke-width="4" stroke-linecap="round" stroke="#007f3b" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
-        </svg>
-        You've given permission to be contacted for taking part in coronavirus vaccine studies.</p>
-  
+        <p class="nhsuk-body-l">You've given permission to be contacted for taking part in coronavirus vaccine studies.</p>
+      </div>
 
       <p>Vaccine studies are the only way to find effective vaccines. Thank you for helping the NHS to save lives.</p>
 
@@ -62,18 +60,17 @@
 
 <div class="nhsuk-inset-text">
   <span class="nhsuk-u-visually-hidden">Information: </span>
-  
-<div class="nhsuk-u-padding-bottom-3"></div>
 
-<h3>Share on social media</h3>
-<div class="nhsuk-u-padding-bottom-3"></div>
-<p>
-<img width="40px" src="/images/facebook.svg"></img> Facebook &nbsp;&nbsp;&nbsp;&emsp;&emsp; 
-<img width="40px" src="/images/twitter.svg"></img> Twitter
-<p>
-<img width="40px" src="/images/email.svg"></img> Email &emsp;&emsp;&nbsp;&nbsp;&emsp;&emsp;
-<img width="40px" src="/images/whatsapp.svg"></img> Whatsapp
-<p>
+     <h3>Share this service on social media</h3>
+      <p>Sign up to be contacted for coronavirus vaccine studies</p>
+      <p>
+        <img width="40px" src="/images/facebook.svg"></img> Facebook &nbsp;&nbsp;&nbsp;&emsp;&emsp;
+        <img width="40px" src="/images/twitter.svg"></img> Twitter
+      </p>
+      <p>
+        <img width="40px" src="/images/email.svg"></img> Email &emsp;&emsp;&nbsp;&nbsp;&emsp;&emsp;
+        <img width="40px" src="/images/whatsapp.svg"></img> Whatsapp
+      </p>
 
 </div>
 
