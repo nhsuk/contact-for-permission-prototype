@@ -4,10 +4,10 @@
 <svg version="1.1"
 	 id="Layer_1" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:svg="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1280px" height="994.74px"
-	 viewBox="0 -194.74 1280 994.74" enable-background="new 0 -194.74 1280 994.74" xml:space="preserve">
+	 viewBox="0 0 1280 994.74" enable-background="new 0 0 1280 994.74" xml:space="preserve">
 <g transform="translate(0,-952.36218)">
-	<path d="M228.855,1039.573L640,1394.811l411.146-355.239H228.855z M197.759,1065.956v508.828l283.31-264.149L197.759,1065.956z
-		 M1082.241,1065.956l-283.309,244.678l283.309,264.149V1065.956z M511.852,1337.332L226.97,1602.425h826.062l-284.882-265.092
-		l-114.955,99.25c-7.565,6.578-18.819,6.578-26.386,0L511.852,1337.332L511.852,1337.332z"/>
+	<path d="M228.855,1384.251L640,1739.489l411.146-355.239L228.855,1384.251L228.855,1384.251z M197.759,1410.634v508.828
+		l283.311-264.149L197.759,1410.634z M1082.241,1410.634l-283.31,244.678l283.31,264.149V1410.634z M511.852,1682.01
+		L226.97,1947.102h826.062L768.15,1682.011l-114.955,99.25c-7.565,6.578-18.819,6.578-26.387,0L511.852,1682.01L511.852,1682.01z"/>
 </g>
 </svg>
