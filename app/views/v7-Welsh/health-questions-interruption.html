@@ -1,0 +1,43 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v7-Welsh" %}
+{% if (data['tested'] == "Ydw") %}
+  {% set backLink = "test-results" %}
+{% else %}
+  {% set backLink = "tested" %}
+{% endif %}
+{% set heading = "Byddwn nawr yn gofyn cwestiynau i chi am eich iechyd" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-card nhsuk-card--blue nhsuk-u-padding-1">
+        <div class="nhsuk-card__content">
+          <h1 class="nhsuk-card__heading nhsuk-u-margin-bottom-5">{{ heading }}</h1>
+          <p>Rydym yn gofyn i chi am eich iechyd fel y gellir:</p>
+          <ul>
+            <li>cael y gymysgedd iawn o wahanol bobl i gymryd rhan mewn astudiaethau</li>
+            <li>sicrhau y bydd unrhyw frechlynnau a ddatblygir yn gweithio i bawb</li>
+            <li>gwirio pa astudiaethau brechlyn y gallech fod yn addas ar eu cyfer</li>
+          </ul>
+
+          <p>Byddwn yn gofyn am bethau fel asthma, triniaeth canser a chyflyrau'r galon.</p>
+
+          <p>Dewiswch yr ateb sydd agosaf at eich sefyllfa. Gallwch roi mwy o fanylion i unrhyw ymchwilwyr sy'n cysylltu â chi.</p>
+
+          <p>Nid yw cael cyflwr iechyd yn golygu na allwch gymryd rhan mewn astudiaethau brechlyn.</p>
+
+          <form action="are-you-pregnant" method="post">
+            <input type="submit" class="nhsuk-button nhsuk-button--reverse nhsuk-u-margin-bottom-4" value="Parhewch">
+          </form>
+
+          <p>Bydd NHS Digital yn cadw'ch atebion yn ddiogel. <a href="/privacy" target="_blank" rel="noopener noreferrer">Darganfyddwch yn y polisi preifatrwydd sut y bydd eich data yn cael ei brosesu gan ddefnyddio'r gwasanaeth hwn<span class="nhsuk-u-visually-hidden"> - Tudalen yn agor mewn ffenestr newydd</span></a> (yn agor mewn ffenestr newydd).</p>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

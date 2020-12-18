@@ -1,0 +1,65 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v7-Welsh" %}
+{% set backLink = "work" %}
+{% set heading = "Ydych chi'n gweithio ym maes iechyd neu ofal cymdeithasol ac yn cael cyswllt wyneb yn wyneb â chleifion?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/tested" method="post" class="form">
+
+        {{ radios({
+          idPrefix: "health-social-care",
+          name: "health-social-care",
+          fieldset: {
+            legend: {
+              text: heading,
+              isPageHeading: true,
+              classes: "nhsuk-fieldset__legend--l"
+            }
+          },
+          "hint": {
+            "text": "Rhai enghreifftiau o hyn yw nyrs, meddyg, gweithiwr gofal. Dewiswch Ydw dim ond os oes gennych gyswllt wyneb yn wyneb â chleifion ar hyn o bryd"
+          },
+          items: [
+            {
+              value: "Ydw, rwy'n gweithio ym maes iechyd neu ofal cymdeithasol",
+              text: "Ydw",
+              checked: checked("health-social-care", "Ydw, rwy'n gweithio ym maes iechyd neu ofal cymdeithasol")
+            },
+            {
+              value: "Na, nid wyf yn gweithio ym maes iechyd na gofal cymdeithasol",
+              text: "Nac ydw",
+              checked: checked("health-social-care", "Na, nid wyf yn gweithio ym maes iechyd na gofal cymdeithasol")
+            },
+            {
+              divider: "neu"
+            },
+            {
+              "value": "Dwi ddim yn siŵr",
+              "text": "Dwi ddim yn siŵr",
+              "name": "Dwi ddim yn siŵr",
+              "checked": checked("health-social-care", "Dwi ddim yn siŵr")
+            }
+          ]
+        }) }}
+
+        {{ details({
+          "text": "Pam yr ydym yn gofyn y cwestiwn hwn",
+          "HTML": "
+            <p>Rydym yn gofyn hyn oherwydd gallai pobl sy'n gweithio ym maes iechyd a gofal cymdeithasol fod yn fwy tebygol o weithio mewn man lle mae coronafeirws yn cael ei drosglwyddo i eraill.</p> 
+            <p>Gall gwybod a ydych chi mewn swydd fel hon helpu ymchwilwyr i'ch paru ag astudiaeth berthnasol.</p>
+          "
+        }) }}
+
+        {{ button({
+          "text": "Parhewch"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

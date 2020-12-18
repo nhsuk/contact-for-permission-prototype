@@ -1,0 +1,65 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v7-Welsh" %}
+{% set backLink = "tested" %}
+{% set heading = "Beth oedd canlyniadau eich prawf?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/health-questions-interruption" method="post" class="form">
+
+       {{ radios({
+        "idPrefix": "test-results",
+        "name": "test-results",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "items": [
+          {
+            "value": "Positif",
+            "text": "Positif",
+            "name": "Positif",
+            "checked": checked("test-results", "Positif")
+          },
+          {
+            "value": "Negyddol",
+            "text": "Negyddol",
+            "name": "Negyddol",
+            "checked": checked("test-results", "Negyddol")
+          },
+          {
+            "value": "Yn aneglur, yn ddi-rym, yn ffiniol neu'n amhendant",
+            "text": "Yn aneglur, yn ddi-rym, yn ffiniol neu'n amhendant",
+            "name": "Yn aneglur, yn ddi-rym, yn ffiniol neu'n amhendant",
+            "checked": checked("test-results", "Yn aneglur, yn ddi-rym, yn ffiniol neu'n amhendant")
+          },
+          {
+            divider: "neu"
+          },
+          {
+            value: "Rwy'n aros am fy nghanlyniadau",
+            text: "Rwy'n aros am fy nghanlyniadau",
+            checked: checked("test-results", "Rwy'n aros am fy nghanlyniadau"),
+            label: {
+              classes: 'nhsuk-label'
+            }
+          }
+        ]
+      }) }}
+
+        {{ button({
+          "text": "Parhewch"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

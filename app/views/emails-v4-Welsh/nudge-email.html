@@ -1,0 +1,24 @@
+{% extends 'layout-email-Welsh.html' %}
+
+{% set version = "emails-v4-Welsh" %}
+{% set bodyClasses = "app-email-body" %}
+{% set emailFrom = "contact.for-research2@nhs.net" %}
+{% set emailTo = "joe.bloggs@google.com" %}
+{% set emailSubject = "NHS: Thank you for starting to sign up to be contacted for coronavirus vaccine research" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+
+  <p>Thank you for starting to sign up to be contacted for coronavirus vaccine research.</p>
+
+  <p>We’re sorry that the email we sent you took a long time to arrive. It should be with you now.</p>
+
+  <p>Click the link in the email, and you can continue to sign up.</p>
+
+  <p>If the link in that email has expired, you can sign up again.</p>
+
+  <p><a href="/v7">https://www.nhs.uk/sign-up-to-be-contacted-for-research</a>.</p>
+
+{% endblock %}

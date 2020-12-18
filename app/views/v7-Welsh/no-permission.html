@@ -1,0 +1,51 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v7-Welsh" %}
+{% set backLink = "permission" %}
+{% set heading = "Cadarnhewch nad ydych chi'n rhoi eich caniatâd" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/no-permission-confirmed" method="post" class="form">
+
+        {{ radios({
+        "idPrefix": "no-permission-confirmed",
+        "name": "no-permission-confirmed",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "hint": {
+          "text": "Os na roddwch eich caniatâd ni allwch gofrestru i ni gysylltu â chi ynghylch astudiaethau brechlyn coronafeirws"
+        },
+        "items": [
+          {
+            "value": "Rwy'n cadarnhau nad wyf yn rhoi fy nghaniatâd",
+            "text": "Rwy'n cadarnhau nad wyf yn rhoi fy nghaniatâd",
+            "name": "Rwy'n cadarnhau nad wyf yn rhoi fy nghaniatâd",
+            "checked": checked("no-permission-confirmed", "Rwy'n cadarnhau nad wyf yn rhoi fy nghaniatâd")
+          },
+          {
+            "value": "Rwyf eisiau rhoi fy nghaniatâd",
+            "text": "Rwyf eisiau rhoi fy nghaniatâd",
+            "name": "Rwyf eisiau rhoi fy nghaniatâd",
+            "checked": checked("no-permission-confirmed", "Rwyf eisiau rhoi fy nghaniatâd")
+          }
+        ]
+      }) }}
+        
+        {{ button({
+          "text": "Parhewch"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

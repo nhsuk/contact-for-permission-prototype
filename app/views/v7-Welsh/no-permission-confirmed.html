@@ -1,0 +1,25 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v7-Welsh" %}
+{% set heading = "Heb roi caniatâd" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-alert nhsuk-alert--information">
+        <h1 class="nhsuk-u-margin-bottom-4">{{ heading }}</h1>
+        <p class="nhsuk-body-l">Nid ydych wedi rhoi caniatâd i ni gysylltu â chi i gymryd rhan mewn astudiaethau brechlyn coronafeirws.</p>
+      </div>
+
+      <p>Nid yw eich atebion wedi'u cadw.</p>
+
+      <h2>Rhowch eich caniatâd os ydych chi'n newid eich meddwl</h2>
+      <p>Gallwch <a href="/v5-Welsh">gofrestru i ni gysylltu â chi i gymryd rhan mewn astudiaethau brechlyn coronafeirws</a> ar unrhyw adeg.</p>
+
+    </div>
+  </div>
+{% endblock %}

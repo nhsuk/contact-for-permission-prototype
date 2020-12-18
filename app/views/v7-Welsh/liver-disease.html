@@ -1,0 +1,60 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v7-Welsh" %}
+{% set backLink = "lung-disease" %}
+{% set heading = "A yw meddyg wedi dweud wrthych fod gennych gyflwr yr afu?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/cardiac-disease" method="post" class="form">
+
+        {{ radios({
+          "idPrefix": "liver-disease",
+          "name": "liver-disease",
+          "fieldset": {
+            "legend": {
+              "text": heading,
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "hint": {
+            "text": "Rhai enghreifftiau yw hepatitis, sirosis"
+          },
+          "items": [
+            {
+              "value": "Ydyw",
+              "text": "Ydyw",
+              "name": "Ydyw",
+              "checked": checked("liver-disease", "Ydyw")
+            },
+            {
+              "value": "Nac ydyw",
+              "text": "Nac ydyw",
+              "name": "Nac ydyw",
+              "checked": checked("liver-disease", "Nac ydyw")
+            },
+            {
+              divider: "neu"
+            },
+            {
+              "value": "Dwi ddim yn siŵr",
+              "text": "Dwi ddim yn siŵr",
+              "name": "Dwi ddim yn siŵr",
+              "checked": checked("liver-disease", "Dwi ddim yn siŵr")
+            }
+          ]
+        }) }}
+
+      {{ button({
+        "text": "Parhewch"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

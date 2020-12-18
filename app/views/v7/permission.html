@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% set version = "v7" %}
+{% set backLink = "permission-interruption" %}
+{% set heading = "Choose to give your permission" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/no-permission" method="post" class="form">
+      <fieldset class="nhsuk-fieldset">
+
+        {{ radios({
+          "idPrefix": "give-permission",
+          "name": "give-permission",
+          "fieldset": {
+            "legend": {
+              "classes": "nhsuk-fieldset__legend nhsuk-fieldset__legend--l",
+              "isPageHeading": true,
+              "text": "Do you give permission for researchers to contact you about taking part in approved UK coronavirus (COVID-19) vaccine studies?"
+            }
+          },
+          "items": [
+            {
+              "value": "Yes, I give my permission",
+              "text": "Yes, I give my permission",
+              "name": "Yes, I give my permission",
+              "checked": checked("give-permission", "Yes, I give my permission")
+            },
+            {
+              "value": "No, I do not give my permission",
+              "text": "No, I do not give my permission",
+              "name": "No, I do not give my permission",
+              "checked": checked("give-permission", "No, I do not give my permission")
+            }
+          ]
+        }) }}
+
+        </fieldset>
+        
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
