@@ -4,6 +4,457 @@ const router = express.Router();
 
 // Add your routes here - above the module.exports line
 
+// VERSION 7 WELSH //
+
+// Over 18 routing - V7 WELSH
+router.post('/v7-Welsh/country', function (req, res) {
+
+  var install = req.session.data['18orover']
+
+  if (install == "Nac ydw"){
+    res.redirect('/v7-Welsh/under18')
+  }
+  else {
+    res.redirect('/v7-Welsh/country')
+  }
+
+})
+
+// Confirm email - v7 WELSH
+router.post('/v7-Welsh/what-we-ask-for', function (req, res) {
+
+  var install = req.session.data['confirm-email']
+
+  if (install == "No, that is not my email address"){
+    res.redirect('/v7-Welsh/email')
+  }
+  else {
+    res.redirect('/v7-Welsh/what-we-ask-for')
+  }
+
+})
+
+// No permission confirmation - V7 WELSH
+router.post('/v7-Welsh/no-permission-confirmed', function (req, res) {
+
+  var install = req.session.data['no-permission-confirmed']
+
+  if (install == "Rwy'n cadarnhau nad wyf yn rhoi fy nghaniatâd"){
+    res.redirect('/v7-Welsh/no-permission-confirmed')
+  }
+  else {
+    res.redirect('/v7-Welsh/permission')
+  }
+
+})
+
+// Pregnant routing - V7 WELSH
+router.post('/v7-Welsh/are-you-pregnant', function (req, res) {
+
+  var install = req.session.data['sex']
+
+  if (install == "Benyw"){
+    res.redirect('/v7-Welsh/are-you-pregnant')
+  }
+  else {
+    res.redirect('/v7-Welsh/flu-jab')
+  }
+
+})
+
+// Contact with different people routing - V7 WELSH
+router.post('/v7-Welsh/health-social-care', function (req, res) {
+
+  var install = req.session.data['work']
+
+  if (install == "Ydyw, mae'r gwaith rydw i'n ei wneud ar hyn o bryd yn golygu bod gen i gyswllt wyneb yn wyneb â gwahanol bobl bron bob dydd"){
+    res.redirect('/v7-Welsh/health-social-care')
+  }
+  else {
+    res.redirect('/v7-Welsh/tested')
+  }
+
+})
+
+// Tested routing - V7 WELSH
+router.post('/v7-Welsh/test-results', function (req, res) {
+
+  var install = req.session.data['tested']
+
+  if (install == "Ydw"){
+    res.redirect('/v7-Welsh/test-results')
+  }
+  else {
+    res.redirect('/v7-Welsh/health-questions-interruption')
+  }
+
+})
+
+// Country routing - V7 WELSH
+router.post('/v7-Welsh/email-interruption', function (req, res) {
+
+  var install = req.session.data['country']
+
+  if (install == "Dim o’r rhain"){
+    res.redirect('/v7-Welsh/outside-uk')
+  }
+  else {
+    res.redirect('/v7-Welsh/email-interruption')
+  }
+
+})
+
+// Permission routing - V7 WELSH
+router.post('/v7-Welsh/no-permission', function (req, res) {
+
+  var install = req.session.data['give-permission']
+
+  if (install == "Na, dydw i ddim yn rhoi fy nghaniatâd"){
+    res.redirect('/v7-Welsh/no-permission')
+  }
+  else {
+    res.redirect('/v7-Welsh/hear-from-nhsd')
+  }
+
+})
+
+// Ethnicity question routing - V7 WELSH
+router.post('/v7-Welsh/work', function (req, res) {
+
+  var install = req.session.data['ethnic-group']
+
+  if (install == "Gwyn"){
+    res.redirect('/v7-Welsh/ethnic-group-white')
+  }
+  if (install == "Grwpiau ethnig cymysg neu luosog"){
+    res.redirect('/v7-Welsh/ethnic-group-mixed')
+  }
+  if (install == "Prydeinig Asiaidd neu Asiaidd"){
+    res.redirect('/v7-Welsh/ethnic-group-asian')
+  }
+  if (install == "Du, Affricanaidd, Du Prydeinig neu Caribî"){
+    res.redirect('/v7-Welsh/ethnic-group-black')
+  }
+  else {
+    res.redirect('/v7-Welsh/work')
+  }
+
+})
+
+// END OF VERSION 7 WELSH ROUTING //
+
+
+
+// VERSION 7 //
+
+// Contact preference - V7
+router.post('/v7/phone-number', function (req, res) {
+
+  var install = req.session.data['contact-by-phone']
+
+  if (install == "No"){
+    res.redirect('/v7/your-sex')
+  }
+  else {
+    res.redirect('/v7/phone-number')
+  }
+
+})
+
+// Over 18 routing - V7
+router.post('/v7/country', function (req, res) {
+
+  var install = req.session.data['18orover']
+
+  if (install == "No"){
+    res.redirect('/v7/under18')
+  }
+  else {
+    res.redirect('/v7/country')
+  }
+
+})
+
+// Confirm email - v7
+router.post('/v7/what-we-ask-for', function (req, res) {
+
+  var install = req.session.data['confirm-email']
+
+  if (install == "No, that is not my email address"){
+    res.redirect('/v7/email')
+  }
+  else {
+    res.redirect('/v7/what-we-ask-for')
+  }
+
+})
+
+// No permission confirmation - V7
+router.post('/v7/no-permission-confirmed', function (req, res) {
+
+  var install = req.session.data['no-permission-confirmed']
+
+  if (install == "I confirm I do not give my permission"){
+    res.redirect('/v7/no-permission-confirmed')
+  }
+  else {
+    res.redirect('/v7/permission')
+  }
+
+})
+
+// Pregnant routing - V7
+router.post('/v7/are-you-pregnant', function (req, res) {
+
+  var install = req.session.data['sex']
+
+  if (install == "Female"){
+    res.redirect('/v7/are-you-pregnant')
+  }
+  else {
+    res.redirect('/v7/flu-jab')
+  }
+
+})
+
+// Contact with different people routing - V7
+router.post('/v7/health-social-care', function (req, res) {
+
+  var install = req.session.data['work']
+
+  if (install == "Yes, the work I'm doing at the moment means I have face to face contact with different people every day"){
+    res.redirect('/v7/health-social-care')
+  }
+  else {
+    res.redirect('/v7/tested')
+  }
+
+})
+
+// Tested routing - V7
+router.post('/v7/test-results', function (req, res) {
+
+  var install = req.session.data['tested']
+
+  if (install == "Yes"){
+    res.redirect('/v7/test-results')
+  }
+  else {
+    res.redirect('/v7/health-questions-interruption')
+  }
+
+})
+
+// Country routing - V7
+router.post('/v7/email-interruption', function (req, res) {
+
+  var install = req.session.data['country']
+
+  if (install == "None of these"){
+    res.redirect('/v7/outside-uk')
+  }
+  else {
+    res.redirect('/v7/email-interruption')
+  }
+
+})
+
+// Permission routing - V7
+router.post('/v7/no-permission', function (req, res) {
+
+  var install = req.session.data['give-permission']
+
+  if (install == "No, I do not give my permission"){
+    res.redirect('/v7/no-permission')
+  }
+  else {
+    res.redirect('/v7/hear-from-nhsd')
+  }
+
+})
+
+// Ethnicity question routing - V7
+router.post('/v7/work', function (req, res) {
+
+  var install = req.session.data['ethnic-group']
+
+  if (install == "White"){
+    res.redirect('/v7/ethnic-group-white')
+  }
+  if (install == "Mixed or multiple ethnic groups"){
+    res.redirect('/v7/ethnic-group-mixed')
+  }
+  if (install == "Asian or Asian British"){
+    res.redirect('/v7/ethnic-group-asian')
+  }
+  if (install == "Black, African, Black British or Caribbean"){
+    res.redirect('/v7/ethnic-group-black')
+  }
+  else {
+    res.redirect('/v7/work')
+  }
+
+})
+
+// END OF VERSION 7 ROUTING //
+
+
+// THERE ARE NO VERSION 6 WELSH //
+
+
+// VERSION 6 //
+
+// Contact preference - V6
+router.post('/v6/phone-number', function (req, res) {
+
+  var install = req.session.data['contact-by-phone']
+
+  if (install == "No"){
+    res.redirect('/v6/your-sex')
+  }
+  else {
+    res.redirect('/v6/phone-number')
+  }
+
+})
+
+// Over 18 routing - V6
+router.post('/v6/country', function (req, res) {
+
+  var install = req.session.data['18orover']
+
+  if (install == "No"){
+    res.redirect('/v6/under18')
+  }
+  else {
+    res.redirect('/v6/country')
+  }
+
+})
+
+// Confirm email - v6
+router.post('/v6/what-we-ask-for', function (req, res) {
+
+  var install = req.session.data['confirm-email']
+
+  if (install == "No, that is not my email address"){
+    res.redirect('/v6/email')
+  }
+  else {
+    res.redirect('/v6/what-we-ask-for')
+  }
+
+})
+
+// No permission confirmation - V6
+router.post('/v6/no-permission-confirmed', function (req, res) {
+
+  var install = req.session.data['no-permission-confirmed']
+
+  if (install == "I confirm I do not give my permission"){
+    res.redirect('/v6/no-permission-confirmed')
+  }
+  else {
+    res.redirect('/v6/permission')
+  }
+
+})
+
+// Pregnant routing - V6
+router.post('/v6/are-you-pregnant', function (req, res) {
+
+  var install = req.session.data['sex']
+
+  if (install == "Female"){
+    res.redirect('/v6/are-you-pregnant')
+  }
+  else {
+    res.redirect('/v6/flu-jab')
+  }
+
+})
+
+// Contact with different people routing - V6
+router.post('/v6/health-social-care', function (req, res) {
+
+  var install = req.session.data['work']
+
+  if (install == "Yes, the work I'm doing at the moment means I have face to face contact with different people every day"){
+    res.redirect('/v6/health-social-care')
+  }
+  else {
+    res.redirect('/v6/tested')
+  }
+
+})
+
+// Tested routing - V6
+router.post('/v6/test-results', function (req, res) {
+
+  var install = req.session.data['tested']
+
+  if (install == "Yes"){
+    res.redirect('/v6/test-results')
+  }
+  else {
+    res.redirect('/v6/health-questions-interruption')
+  }
+
+})
+
+// Country routing - V6
+router.post('/v6/email-interruption', function (req, res) {
+
+  var install = req.session.data['country']
+
+  if (install == "None of these"){
+    res.redirect('/v6/outside-uk')
+  }
+  else {
+    res.redirect('/v6/email-interruption')
+  }
+
+})
+
+// Permission routing - V6
+router.post('/v6/no-permission', function (req, res) {
+
+  var install = req.session.data['give-permission']
+
+  if (install == "No, I do not give my permission"){
+    res.redirect('/v6/no-permission')
+  }
+  else {
+    res.redirect('/v6/hear-from-nhsd')
+  }
+
+})
+
+// Ethnicity question routing - V6
+router.post('/v6/work', function (req, res) {
+
+  var install = req.session.data['ethnic-group']
+
+  if (install == "White"){
+    res.redirect('/v6/ethnic-group-white')
+  }
+  if (install == "Mixed or multiple ethnic groups"){
+    res.redirect('/v6/ethnic-group-mixed')
+  }
+  if (install == "Asian or Asian British"){
+    res.redirect('/v6/ethnic-group-asian')
+  }
+  if (install == "Black, African, Black British or Caribbean"){
+    res.redirect('/v6/ethnic-group-black')
+  }
+  else {
+    res.redirect('/v6/work')
+  }
+
+})
+
+// END OF VERSION 6 ROUTING //
+
 
 // VERSION 5 WELSH //
 
