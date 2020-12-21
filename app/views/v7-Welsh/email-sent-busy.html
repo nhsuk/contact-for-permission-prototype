@@ -1,0 +1,35 @@
+{% extends 'layout-Welsh.html' %}
+{% set backLink = "email" %}
+{% set version = "v7-Welsh" %}
+{% set heading = "Gwiriwch eich e-bost" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ heading }}</h1>
+
+      <p>Rydym wedi anfon e-bost i <strong>{{ data['email'] }}</strong></p> 
+      <p>Cliciwch ar y ddolen yn yr e-bost i gadarnhau eich cyfeiriad e-bost.</p>
+      <p>Ar ôl 72 awr, ni fydd y ddolen yn gweithio.</p>
+      <p><strong>contact.for-research2@nhs.net</strong> ydy’r cyfeiriad e-bost y bydd yn dod ohono</p>
+      <p>Gwiriwch eich ffolder sbam neu sothach os nad ydych chi’n cael e-bost. Gadewch ychydig o funudau i’r e-bost gyrraedd. </p>
+
+      <div class="nhsuk-inset-text nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5">
+        <span class="nhsuk-u-visually-hidden">Pwysig</span>
+        <p>Mae yna lawer o bobl yn cofrestru ar hyn o bryd. Mae’n bosibl y bydd angen i chi aros yn hirach nag arfer am yr e-bost. </p>
+      </div>
+
+      <p>Os ydy’r cyfeiriad e-bost uchod yn anghywir, gallwch chi <a href='/{{ version }}/email'>newid eich cyfeiriad e-bost</a></p>
+
+      <p>Ni allwch chi gofrestru i ni gysylltu â chi ar gyfer astudiaethau brechlyn coronafeirws nes eich bod wedi cadarnhau eich cyfeiriad e-bost. </p>
+
+      <p class="nhsuk-body-s nhsuk-u-margin-top-9"><a href="/emails-v4-Welsh/confirm-email">Next step (prototype only)</a></p>
+
+    </div>
+  </div>
+{% endblock %}

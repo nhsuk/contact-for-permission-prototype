@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% set version = "v7" %}
+{% set backLink = "your-sex" %}
+{% set heading = "Is your gender the same as the sex you were registered at birth?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+      <form action="/{{ version }}/ethnic-group" method="post" class="form">
+
+        {% set genderOtherHtml %}
+        {{ input({
+          id: "gender-other",
+          name: "gender-other",
+          classes: "nhsuk-u-width-two-thirds",
+          value: data['gender-other'],
+          label: {
+            text: "Your gender (optional)"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ radios({
+        "idPrefix": "gender",
+        "name": "gender",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "items": [
+          {
+            "value": "Same as sex registered at birth",
+            "text": "Yes",
+            "name": "Yes",
+            "checked": checked("gender", "Same as sex registered at birth")
+          },
+          {
+            "value": "Not the same as sex registered at birth",
+            "text": "No",
+            "name": "No",
+            "checked": checked("gender", "Your gender"),
+            conditional: {
+              html: genderOtherHtml
+            }
+          },
+          {
+            divider: "or"
+          },
+          {
+            "value": "Prefer not to say",
+            "text": "Prefer not to say",
+            "name": "Prefer not to say",
+            "checked": checked("gender", "Prefer not to say")
+          }
+        ]
+      }) }}
+
+      {{ details({
+        "text": "Why we are asking this question",
+        "HTML": "
+          <p>We're asking this so we can make sure there is a mix of different people taking part in vaccine studies.</p>
+          <p>This is so we can make sure any vaccines developed work for everyone.</p>
+          <p>We also want to make sure everyone 18 and over in the UK feels able to take part in vaccine studies if they want to.</p>
+          <p>If we find that people whose gender is not the same as the sex they were registered at birth are not signing up to be contacted about vaccine studies, we can look at how to improve this.</p>
+        "
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

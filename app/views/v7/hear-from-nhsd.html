@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+
+{% set version = "v7" %}
+{% if (data['contact-preference'] == "Email") %}
+  {% set backLink = "contact-preference" %}
+{% else %}
+  {% set backLink = "phone-number" %}
+{% endif %}
+{% set heading = "Get involved in other health research" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ heading }}</h1>
+      <p>There is a lot of health research taking place in the UK about coronavirus and other health conditions. This research aims to find the most effective medicines and treatments.</p>
+
+      <div class="nhsuk-inset-text nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-5">
+        <p>For more information about other types of health research see <a href="https://www.bepartofresearch.nihr.ac.uk/" target="_blank" rel="noopener noreferrer">Be Part of Research (opens in new window)</a>, which is provided by the National Institute for Health Research, the research partner of the NHS, public health and social care.</p>
+      </div>
+
+      <p>NHS Digital would like to tell you about how the coronavirus vaccine studies are going. We plan to develop this service, including offering the chance to take part in other types of health research.</p>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Who is NHS Digital?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>NHS Digital is part of the NHS and securely collects, analyses and shares information to improve health and social care services.</p>
+          <p>This includes working with the National Institute for Health Research and researchers to collect and share data to support health research into coronavirus and other health conditions.</p>
+        </div>
+      </details>
+
+      <h2 class="nhsuk-u-margin-bottom-5">Do you give NHS Digital permission to email you about:</h2>
+      <form action="/{{ version }}/check-answers" method="post" class="form">
+
+        {{ radios({
+          "idPrefix": "hear-from-nhsd-covid",
+          "name": "hear-from-nhsd-covid",
+          "fieldset": {
+            "legend": {
+              "text": "How the coronavirus vaccine studies are going?",
+              "classes": "nhsuk-u-margin-bottom-4"
+            }
+          },
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes",
+              "name": "Yes",
+              "checked": checked("hear-from-nhsd-covid", "Yes")
+            },
+            {
+              "value": "No",
+              "text": "No",
+              "name": "No",
+              "checked": checked("hear-from-nhsd-covid", "No")
+            }
+          ]
+        }) }}
+
+        {{ radios({
+          "idPrefix": "hear-from-nhsd-this-service",
+          "name": "hear-from-nhsd-this-service",
+          "fieldset": {
+            "legend": {
+              "text": "Developments to this service, including the chance to take part in other types of health research?",
+              "classes": "nhsuk-u-margin-bottom-4"
+            }
+          },
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes",
+              "name": "Yes",
+              "checked": checked("hear-from-nhsd-this-service", "Yes")
+            },
+            {
+              "value": "No",
+              "text": "No",
+              "name": "No",
+              "checked": checked("hear-from-nhsd-this-service", "No")
+            }
+          ]
+        }) }}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

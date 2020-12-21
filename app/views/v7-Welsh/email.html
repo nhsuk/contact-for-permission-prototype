@@ -1,0 +1,39 @@
+{% extends 'layout-Welsh.html' %}
+{% set backLink = "email-interruption" %}
+{% set version = "v7-Welsh" %}
+{% set heading = "Beth yw eich cyfeiriad e-bost?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/email-loader" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+          <h1 class="nhsuk-label-wrapper">
+            <label class="nhsuk-label nhsuk-label--l" for="email">
+              {{ heading }}
+            </label>
+          </h1>
+          <input class="nhsuk-input" id="email" name="email" type="email" autocomplete="email" spellcheck="false" value="{{ data['email'] }}">
+        </div>
+
+        {{ details({
+          "text": "Pam yr ydym yn gofyn y cwestiwn hwn",
+          "HTML": "
+            <p>Byddwn yn defnyddio'ch e-bost i gysylltu â chi am y caniatâd a roddwch inni.</p>
+            <p>Byddwn hefyd yn anfon e-bost cadarnhau atoch i egluro'r hyn rydych chi wedi rhoi caniatâd i ni ei wneud, beth fydd yn digwydd nesaf, a sut i dynnu'ch caniatâd yn ôl os ydych chi eisiau.</p>
+            <p>Os tynnwch eich caniatâd yn ôl, byddwn yn defnyddio'ch cyfeiriad e-bost i'ch adnabod.</p>
+          "
+        }) }}
+
+        {{ button({
+          "text": "Parhewch"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

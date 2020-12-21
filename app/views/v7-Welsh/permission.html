@@ -1,0 +1,52 @@
+{% extends 'layout-Welsh.html' %}
+
+{% set version = "v7-Welsh" %}
+{% set backLink = "permission-interruption" %}
+{% set heading = "Choose to give your permission" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ version }}/no-permission" method="post" class="form">
+      <fieldset class="nhsuk-fieldset">
+
+        {{ radios({
+          "idPrefix": "give-permission",
+          "name": "give-permission",
+          "fieldset": {
+            "legend": {
+              "classes": "nhsuk-fieldset__legend nhsuk-fieldset__legend--l",
+              "isPageHeading": true,
+              "text": "A ydych chi'n rhoi caniatâd i ymchwilwyr gysylltu â chi ynglŷn â chymryd rhan mewn astudiaethau brechlyn coronafeirws y DU (COVID-19) cymeradwy?"
+            }
+          },
+          "items": [
+            {
+              "value": "Ydw, rydw i'n rhoi fy nghaniatâd",
+              "text": "Ydw, rydw i'n rhoi fy nghaniatâd",
+              "name": "Ydw, rydw i'n rhoi fy nghaniatâd",
+              "checked": checked("give-permission", "Ydw, rydw i'n rhoi fy nghaniatâd")
+            },
+            {
+              "value": "Na, dydw i ddim yn rhoi fy nghaniatâd",
+              "text": "Na, dydw i ddim yn rhoi fy nghaniatâd",
+              "name": "Na, dydw i ddim yn rhoi fy nghaniatâd",
+              "checked": checked("give-permission", "Na, dydw i ddim yn rhoi fy nghaniatâd")
+            }
+          ]
+        }) }}
+
+        </fieldset>
+        
+        {{ button({
+          "text": "Parhewch"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
