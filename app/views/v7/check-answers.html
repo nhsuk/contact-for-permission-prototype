@@ -84,7 +84,7 @@
           </a>
         </dd>
       </div>
-        
+
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Sex registered at birth
@@ -99,7 +99,7 @@
         </dd>
       </div>
 
-      
+
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Gender
@@ -117,17 +117,13 @@
           </a>
         </dd>
       </div>
-      
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
               Ethnic group
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {% if (data['ethnicity-other']) %}
-            {{ data['ethnicity-other'] }}
-            {% else %}
             {{ data['ethnic-group'] }}
-            {% endif %}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/ethnic-group">
@@ -135,7 +131,25 @@
             </a>
           </dd>
         </div>
-        
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+              Ethnic background
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if (data['ethnicity-other']) %}
+            {{ data['ethnicity-other'] }}
+            {% else %}
+            {{ data['ethnic-background'] }}
+            {% endif %}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/ethnic-group">
+              Change <span class="nhsuk-u-visually-hidden">Ethnic background</span>
+            </a>
+          </dd>
+        </div>
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Contact with people at work
@@ -165,10 +179,10 @@
           </dd>
         </div>
         {% else %}
-        
+
       {% endif %}
-        
-        
+
+
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
@@ -218,7 +232,7 @@
         </dd>
       </div>
         {% else %}
-        
+
       {% endif %}
 
       <div class="nhsuk-summary-list__row">
@@ -304,7 +318,7 @@
           </a>
         </dd>
       </div>
-      
+
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Currently having treatment for cancer
@@ -348,7 +362,7 @@
       </div>
 
       </dl>
-  
+
       <h2>Permission and contact</h2>
       <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-7">
 

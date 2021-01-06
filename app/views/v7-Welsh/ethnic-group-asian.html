@@ -9,7 +9,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="/{{ version }}/work" method="post" class="form">
+      <form action="/{{ version }}/work2" method="post" class="form">
 
       {% set asianOtherHtml %}
         {{ input({
@@ -23,8 +23,8 @@
       {% endset -%}
 
       {{ radios({
-        idPrefix: "ethnic-group",
-        name: "ethnic-group",
+        idPrefix: "ethnic-background",
+        name: "ethnic-background",
         fieldset: {
           legend: {
             text: heading,
@@ -36,27 +36,27 @@
           {
             value: "Bangladeshaidd",
             text: "Bangladeshaidd",
-            checked: checked("ethnic-group", "Bangladeshaidd")
+            checked: checked("ethnic-background", "Bangladeshaidd")
           },
           {
             value: "Tseiniaidd",
             text: "Tseiniaidd",
-            checked: checked("ethnic-group", "Tseiniaidd")
+            checked: checked("ethnic-background", "Tseiniaidd")
           },
           {
             value: "Indiaidd",
             text: "Indiaidd",
-            checked: checked("ethnic-group", "Indiaidd")
+            checked: checked("ethnic-background", "Indiaidd")
           },
           {
             value: "Pacistanaidd",
             text: "Pacistanaidd",
-            checked: checked("ethnic-group", "Pacistanaidd")
+            checked: checked("ethnic-background", "Pacistanaidd")
           },
           {
             value: "Cefndir Asiaidd arall",
             text: "Cefndir Asiaidd arall",
-            checked: checked("ethnic-group", "Cefndir Asiaidd arall"),
+            checked: checked("ethnic-background", "Cefndir Asiaidd arall"),
             conditional: {
               html: asianOtherHtml
             }
@@ -67,7 +67,7 @@
           {
             value: "Mae'n well gen i beidio â dweud",
             text: "Mae'n well gen i beidio â dweud",
-            checked: checked("ethnic-group", "Mae'n well gen i beidio â dweud"),
+            checked: checked("ethnic-background", "Mae'n well gen i beidio â dweud"),
             label: {
               classes: 'nhsuk-label'
             }

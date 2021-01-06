@@ -9,7 +9,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="/{{ version }}/work" method="post" class="form">
+      <form action="/{{ version }}/work2" method="post" class="form">
 
       {% set asianOtherHtml %}
         {{ input({
@@ -23,8 +23,8 @@
       {% endset -%}
 
       {{ radios({
-        idPrefix: "ethnic-group",
-        name: "ethnic-group",
+        idPrefix: "ethnic-background",
+        name: "ethnic-background",
         fieldset: {
           legend: {
             text: heading,
@@ -36,27 +36,27 @@
           {
             value: "Bangladeshi",
             text: "Bangladeshi",
-            checked: checked("ethnic-group", "Bangladeshi")
+            checked: checked("ethnic-background", "Bangladeshi")
           },
           {
             value: "Chinese",
             text: "Chinese",
-            checked: checked("ethnic-group", "Chinese")
+            checked: checked("ethnic-background", "Chinese")
           },
           {
             value: "Indian",
             text: "Indian",
-            checked: checked("ethnic-group", "Indian")
+            checked: checked("ethnic-background", "Indian")
           },
           {
             value: "Pakistani",
             text: "Pakistani",
-            checked: checked("ethnic-group", "Pakistani")
+            checked: checked("ethnic-background", "Pakistani")
           },
           {
             value: "Another Asian background",
             text: "Another Asian background",
-            checked: checked("ethnic-group", "Another Asian background"),
+            checked: checked("ethnic-background", "Another Asian background"),
             conditional: {
               html: asianOtherHtml
             }
@@ -67,7 +67,7 @@
           {
             value: "Prefer not to say",
             text: "Prefer not to say",
-            checked: checked("ethnic-group", "Prefer not to say"),
+            checked: checked("ethnic-background", "Prefer not to say"),
             label: {
               classes: 'nhsuk-label'
             }
