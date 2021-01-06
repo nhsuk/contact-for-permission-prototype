@@ -123,11 +123,7 @@
             Grŵp ethnig
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {% if (data['ethnicity-other']) %}
-            {{ data['ethnicity-other'] }}
-            {% else %}
             {{ data['ethnic-group'] }}
-            {% endif %}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ version }}/ethnic-group">
@@ -135,6 +131,25 @@
             </a>
           </dd>
         </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+              Cefndir ethnig
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if (data['ethnicity-other']) %}
+            {{ data['ethnicity-other'] }}
+            {% else %}
+            {{ data['ethnic-background'] }}
+            {% endif %}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/{{ version }}/ethnic-group">
+              Newid <span class="nhsuk-u-visually-hidden">cefndir ethnig</span>
+            </a>
+          </dd>
+        </div>
+
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">

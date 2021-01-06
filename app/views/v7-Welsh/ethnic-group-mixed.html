@@ -9,7 +9,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="/{{ version }}/work" method="post" class="form">
+      <form action="/{{ version }}/work2" method="post" class="form">
 
       {% set mixedOtherHtml %}
         {{ input({
@@ -23,8 +23,8 @@
       {% endset -%}
 
       {{ radios({
-        idPrefix: "ethnic-group",
-        name: "ethnic-group",
+        idPrefix: "ethnic-background",
+        name: "ethnic-background",
         fieldset: {
           legend: {
             text: heading,
@@ -36,22 +36,22 @@
           {
             value: "Asiaidd a Gwyn",
             text: "Asiaidd a Gwyn",
-            checked: checked("ethnic-group", "Asiaidd a Gwyn")
+            checked: checked("ethnic-background", "Asiaidd a Gwyn")
           },
           {
             value: "Du Affricanaidd a Gwyn",
             text: "Du Affricanaidd a Gwyn",
-            checked: checked("ethnic-group", "Du Affricanaidd a Gwyn")
+            checked: checked("ethnic-background", "Du Affricanaidd a Gwyn")
           },
           {
             value: "Caribïaidd Du a Gwyn",
             text: "Caribïaidd Du a Gwyn",
-            checked: checked("ethnic-group", "Caribïaidd Du a Gwyn")
+            checked: checked("ethnic-background", "Caribïaidd Du a Gwyn")
           },
           {
             value: "Cefndir cymysg arall",
             text: "Cefndir cymysg arall",
-            checked: checked("ethnic-group", "Cefndir cymysg arall"),
+            checked: checked("ethnic-background", "Cefndir cymysg arall"),
             conditional: {
               html: mixedOtherHtml
             }
@@ -62,7 +62,7 @@
           {
             value: "Mae'n well gen i beidio â dweud",
             text: "Mae'n well gen i beidio â dweud",
-            checked: checked("ethnic-group", "Mae'n well gen i beidio â dweud"),
+            checked: checked("ethnic-background", "Mae'n well gen i beidio â dweud"),
             label: {
               classes: 'nhsuk-label'
             }

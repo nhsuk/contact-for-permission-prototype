@@ -9,7 +9,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="/{{ version }}/work" method="post" class="form">
+      <form action="/{{ version }}/work2" method="post" class="form">
 
       {% set blackOtherHtml %}
         {{ input({
@@ -23,8 +23,8 @@
       {% endset -%}
 
       {{ radios({
-        idPrefix: "ethnic-group",
-        name: "ethnic-group",
+        idPrefix: "ethnic-background",
+        name: "ethnic-background",
         fieldset: {
           legend: {
             text: heading,
@@ -36,17 +36,22 @@
           {
             value: "Affricanaidd",
             text: "Affricanaidd",
-            checked: checked("ethnic-group", "Affricanaidd")
+            checked: checked("ethnic-background", "Affricanaidd")
           },
           {
+            value: "Du Prydeinig",
+            text: "Du Prydeinig",
+            checked: checked("ethnic-background", "Du Prydeinig")
+          },
+          {
+            value: "Caribïaidd",
             text: "Caribïaidd",
-            text: "Caribïaidd",
-            checked: checked("ethnic-group", "Caribïaidd")
+            checked: checked("ethnic-background", "Caribïaidd")
           },
           {
             value: "Cefndir Du arall",
             text: "Cefndir Du arall",
-            checked: checked("ethnic-group", "Cefndir Du arall"),
+            checked: checked("ethnic-background", "Cefndir Du arall"),
             conditional: {
               html: blackOtherHtml
             }
@@ -57,7 +62,7 @@
           {
             value: "Mae'n well gen i beidio â dweud",
             text: "Mae'n well gen i beidio â dweud",
-            checked: checked("ethnic-group-black", "Mae'n well gen i beidio â dweud"),
+            checked: checked("ethnic-background", "Mae'n well gen i beidio â dweud"),
             label: {
               classes: 'nhsuk-label'
             }

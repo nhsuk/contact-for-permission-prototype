@@ -141,6 +141,10 @@ router.post('/v7-Welsh/work', function (req, res) {
 
 })
 
+router.post('/v7-Welsh/work2', function (req, res) {
+  res.redirect('/v7-Welsh/work')
+})
+
 // END OF VERSION 7 WELSH ROUTING //
 
 
@@ -294,6 +298,10 @@ router.post('/v7/work', function (req, res) {
     res.redirect('/v7/work')
   }
 
+})
+
+router.post('/v7/work2', function (req, res) {
+  res.redirect('/v7/work')
 })
 
 // END OF VERSION 7 ROUTING //
